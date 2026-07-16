@@ -57,9 +57,13 @@ The word-list files are plain UTF-8, one lowercase word per line.
 
 UI (Norwegian):
 
-- **Mønster** selector with two options, matching the TUI:
+- **Mønster** selector with four options:
   - *Adjektiv + substantiv (vekselvis)* — alternates: even positions draw
     from adjektiv, odd positions from substantiv.
+  - *Adjektiver + ett substantiv* — the first (N−1) words are adjektiv and the
+    last word is a substantiv (e.g. 6 words → 5 adjektiv + 1 substantiv).
+  - *Adjektiv + substantiv + verb* — cycles adjektiv → substantiv → verb,
+    repeating, across the N positions.
   - *Fritt (blanding av alle ordklasser)* — draws from all three lists
     concatenated.
 - **Antall ord** — number input, default 6, valid range 2–20.
@@ -84,6 +88,13 @@ Generation logic:
 
 ## Section 2 — Utforsk ordlistene
 
+- **Provenance text**: a short always-visible paragraph explaining where the
+  word lists come from and how they were calculated (Norsk Ordbank filtered to
+  4–9-letter words without proper nouns or blacklisted words, ranked by
+  Språkbanken N-gram frequency; sources credited CC-BY).
+- **Reveal toggle**: the tabs/search/results are wrapped in a container that
+  starts hidden. A **Se ordliste** button reveals it and becomes **Skjul
+  ordliste** (toggling `aria-expanded`).
 - **Kategori-faner**: Substantiv / Adjektiv / Verb. Selecting a tab shows that
   list.
 - **Søkefelt**: a text input that filters the active list as the user types,

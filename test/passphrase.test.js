@@ -47,6 +47,40 @@ test("Fritt draws only from the union of all three lists", () => {
   words.forEach((w) => assert.ok(union.has(w), `unexpected word: ${w}`));
 });
 
+test("AdjektiverSubstantiv is (n-1) adjektiv followed by one substantiv", () => {
+  const words = generatePhrase(Pattern.AdjektiverSubstantiv, 5, fixture).split(" ");
+  words.slice(0, -1).forEach((w, i) => assert.ok(fixture.adjektiv.includes(w), `pos ${i} not adjektiv: ${w}`));
+  assert.ok(fixture.substantiv.includes(words[words.length - 1]), `last not substantiv: ${words.at(-1)}`);
+});
+
+test("AdjektivSubstantivVerb cycles adjektiv, substantiv, verb", () => {
+  const byClass = [fixture.adjektiv, fixture.substantiv, fixture.verb];
+  const words = generatePhrase(Pattern.AdjektivSubstantivVerb, 7, fixture).split(" ");
+  words.forEach((w, i) => assert.ok(byClass[i % 3].includes(w), `pos ${i} wrong class: ${w}`));
+});
+
+test("calcEntropyBits for AdjektiverSubstantiv = (n-1)*log2(adj) + log2(sub)", () => {
+  // adjektiv pool 4 -> 2 bits, substantiv pool 8 -> 3 bits.
+  const lists = {
+    adjektiv: ["a", "b", "c", "d"],
+    substantiv: ["e", "f", "g", "h", "i", "j", "k", "l"],
+    verb: [],
+  };
+  // 5 words -> 4*2 + 3 = 11
+  assert.equal(calcEntropyBits(Pattern.AdjektiverSubstantiv, 5, lists), 11);
+});
+
+test("calcEntropyBits for AdjektivSubstantivVerb sums the cycling pools", () => {
+  // adj 4 -> 2, sub 8 -> 3, verb 2 -> 1 bit.
+  const lists = {
+    adjektiv: ["a", "b", "c", "d"],
+    substantiv: ["e", "f", "g", "h", "i", "j", "k", "l"],
+    verb: ["m", "n"],
+  };
+  // 4 words -> adj(2)+sub(3)+verb(1)+adj(2) = 8
+  assert.equal(calcEntropyBits(Pattern.AdjektivSubstantivVerb, 4, lists), 8);
+});
+
 test("generatePhrase throws on an unknown pattern", () => {
   assert.throws(() => generatePhrase("bogus", 4, fixture), /Ukjent mønster/);
 });

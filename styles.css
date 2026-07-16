@@ -99,6 +99,10 @@ button:hover { filter: brightness(1.05); }
 }
 .tab.active { background: var(--accent); color: #1c1c1e; border-color: var(--accent); }
 
+.provenance { color: var(--muted); font-size: 0.9rem; margin: 0 0 1rem; }
+#toggle-list { background: transparent; color: var(--ink); border: 1px solid var(--accent); }
+#browser-content { margin-top: 1rem; }
+
 .count { color: var(--muted); font-size: 0.9rem; margin: 0.25rem 0; }
 .results {
   display: grid;

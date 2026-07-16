@@ -5,6 +5,8 @@
 /** Pattern identifiers used by generatePhrase / calcEntropyBits. */
 export const Pattern = {
   AdjektivSubstantiv: "adjektiv-substantiv",
+  AdjektiverSubstantiv: "adjektiver-substantiv",
+  AdjektivSubstantivVerb: "adjektiv-substantiv-verb",
   Fritt: "fritt",
 };
 
@@ -34,8 +36,32 @@ function pick(arr) {
 
 /** Throw if `pattern` is not one of the known Pattern values. */
 function assertKnownPattern(pattern) {
-  if (pattern !== Pattern.AdjektivSubstantiv && pattern !== Pattern.Fritt) {
+  if (!Object.values(Pattern).includes(pattern)) {
     throw new Error(`Ukjent mønster: ${pattern}`);
+  }
+}
+
+/** The combined pool of every word class, used by the Fritt pattern. */
+function concatAll(lists) {
+  return lists.adjektiv.concat(lists.substantiv, lists.verb);
+}
+
+/**
+ * The word list a given position draws from, for every pattern except Fritt
+ * (which draws from the combined pool the caller supplies). Shared by
+ * generatePhrase (picks a word) and calcEntropyBits (measures the pool).
+ *   AdjektivSubstantiv     -> adjektiv on even positions, substantiv on odd
+ *   AdjektiverSubstantiv   -> adjektiv everywhere except the last position (substantiv)
+ *   AdjektivSubstantivVerb -> adjektiv, substantiv, verb, repeating
+ */
+function poolForPosition(pattern, i, wordCount, lists) {
+  switch (pattern) {
+    case Pattern.AdjektivSubstantiv:
+      return i % 2 === 0 ? lists.adjektiv : lists.substantiv;
+    case Pattern.AdjektiverSubstantiv:
+      return i < wordCount - 1 ? lists.adjektiv : lists.substantiv;
+    case Pattern.AdjektivSubstantivVerb:
+      return [lists.adjektiv, lists.substantiv, lists.verb][i % 3];
   }
 }
 
@@ -46,38 +72,28 @@ function assertKnownPattern(pattern) {
 export function generatePhrase(pattern, wordCount, lists) {
   assertKnownPattern(pattern);
   // Only the free-mix pattern needs the combined pool; don't allocate it otherwise.
-  const alle =
-    pattern === Pattern.Fritt
-      ? lists.adjektiv.concat(lists.substantiv, lists.verb)
-      : null;
+  const alle = pattern === Pattern.Fritt ? concatAll(lists) : null;
   const words = [];
   for (let i = 0; i < wordCount; i++) {
-    if (pattern === Pattern.AdjektivSubstantiv) {
-      words.push(i % 2 === 0 ? pick(lists.adjektiv) : pick(lists.substantiv));
-    } else {
-      words.push(pick(alle));
-    }
+    const pool = pattern === Pattern.Fritt ? alle : poolForPosition(pattern, i, wordCount, lists);
+    words.push(pick(pool));
   }
   return words.join(" ");
 }
 
 /**
- * Approximate entropy in bits, rounded to a whole number.
- * Per-position pool size:
- *   Fritt              -> |adjektiv| + |substantiv| + |verb|
- *   AdjektivSubstantiv -> |adjektiv| on even positions, |substantiv| on odd
+ * Approximate entropy in bits, rounded to a whole number. Sums log2 of the
+ * pool size at each position, so it matches how generatePhrase samples:
+ *   Fritt -> |adjektiv| + |substantiv| + |verb| at every position
+ *   others -> the per-position pool from poolForPosition
  */
 export function calcEntropyBits(pattern, wordCount, lists) {
   assertKnownPattern(pattern);
   const alleSize = lists.adjektiv.length + lists.substantiv.length + lists.verb.length;
   let bits = 0;
   for (let i = 0; i < wordCount; i++) {
-    let pool;
-    if (pattern === Pattern.AdjektivSubstantiv) {
-      pool = i % 2 === 0 ? lists.adjektiv.length : lists.substantiv.length;
-    } else {
-      pool = alleSize;
-    }
+    const pool =
+      pattern === Pattern.Fritt ? alleSize : poolForPosition(pattern, i, wordCount, lists).length;
     bits += Math.log2(pool);
   }
   return Math.round(bits);

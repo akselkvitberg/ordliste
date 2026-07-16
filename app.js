@@ -124,6 +124,16 @@ function wireBrowser(lists) {
   render();
 }
 
+function wireToggleList() {
+  const btn = $("toggle-list");
+  const content = $("browser-content");
+  btn.addEventListener("click", () => {
+    const hidden = content.classList.toggle("hidden");
+    btn.textContent = hidden ? "Se ordliste" : "Skjul ordliste";
+    btn.setAttribute("aria-expanded", String(!hidden));
+  });
+}
+
 async function init() {
   let lists;
   try {
@@ -134,6 +144,7 @@ async function init() {
   }
   wireGenerator(lists);
   wireBrowser(lists);
+  wireToggleList();
 }
 
 init();

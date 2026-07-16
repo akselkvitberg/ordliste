@@ -105,3 +105,38 @@ export function filterWords(words, query) {
   if (q === "") return words;
   return words.filter((w) => w.toLowerCase().includes(q));
 }
+
+/** Non-empty, trimmed lines from a text blob (handles CRLF). */
+function nonEmptyLines(text) {
+  return text
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter((l) => l !== "");
+}
+
+/** Parse verb.txt: one presens form per line. */
+export function parseVerb(text) {
+  return nonEmptyLines(text);
+}
+
+/**
+ * Parse substantiv.txt: `ord<TAB>kjønn` per line, kjønn in {m, f, n}.
+ * Malformed lines are silently skipped.
+ */
+export function parseSubstantiv(text) {
+  return nonEmptyLines(text)
+    .map((l) => l.split("\t"))
+    .filter((p) => p.length === 2 && p[0] !== "" && ["m", "f", "n"].includes(p[1]))
+    .map(([ord, kjonn]) => ({ ord, kjonn }));
+}
+
+/**
+ * Parse adjektiv.txt: `m/f-form<TAB>nøytrumsform` per line.
+ * Malformed lines are silently skipped.
+ */
+export function parseAdjektiv(text) {
+  return nonEmptyLines(text)
+    .map((l) => l.split("\t"))
+    .filter((p) => p.length === 2 && p[0] !== "" && p[1] !== "")
+    .map(([mf, noyt]) => ({ mf, noyt }));
+}

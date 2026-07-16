@@ -1,6 +1,15 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { randomInt, generatePhrase, Pattern, calcEntropyBits, filterWords } from "../passphrase.js";
+import {
+  randomInt,
+  generatePhrase,
+  Pattern,
+  calcEntropyBits,
+  filterWords,
+  parseSubstantiv,
+  parseAdjektiv,
+  parseVerb,
+} from "../passphrase.js";
 
 test("randomInt returns integers within [0, max)", () => {
   for (let i = 0; i < 1000; i++) {
@@ -121,4 +130,46 @@ test("filterWords matches case-insensitive substrings and trims the query", () =
   assert.deepEqual(filterWords(words, "ak"), ["kake", "bakke"]);
   assert.deepEqual(filterWords(words, "  AK  "), ["kake", "bakke"]);
   assert.deepEqual(filterWords(words, "xyz"), []);
+});
+
+test("parseSubstantiv parses ord<TAB>kjønn lines into objects", () => {
+  const text = "ekorn\tn\nkatt\tm\nbok\tf\n";
+  assert.deepEqual(parseSubstantiv(text), [
+    { ord: "ekorn", kjonn: "n" },
+    { ord: "katt", kjonn: "m" },
+    { ord: "bok", kjonn: "f" },
+  ]);
+});
+
+test("parseSubstantiv handles CRLF line endings", () => {
+  assert.deepEqual(parseSubstantiv("hus\tn\r\nkatt\tm\r\n"), [
+    { ord: "hus", kjonn: "n" },
+    { ord: "katt", kjonn: "m" },
+  ]);
+});
+
+test("parseSubstantiv skips blank, tab-less and unknown-gender lines", () => {
+  const text = "ekorn\tn\n\nrart\nhus\tx\n   \nkatt\tm\n";
+  assert.deepEqual(parseSubstantiv(text), [
+    { ord: "ekorn", kjonn: "n" },
+    { ord: "katt", kjonn: "m" },
+  ]);
+});
+
+test("parseAdjektiv parses mf<TAB>nøytrum pairs", () => {
+  const text = "blå\tblått\nfin\tfint\nmoderne\tmoderne\n";
+  assert.deepEqual(parseAdjektiv(text), [
+    { mf: "blå", noyt: "blått" },
+    { mf: "fin", noyt: "fint" },
+    { mf: "moderne", noyt: "moderne" },
+  ]);
+});
+
+test("parseAdjektiv skips blank and malformed lines", () => {
+  const text = "blå\tblått\nrart\n\nfin\t\n";
+  assert.deepEqual(parseAdjektiv(text), [{ mf: "blå", noyt: "blått" }]);
+});
+
+test("parseVerb returns trimmed non-empty lines", () => {
+  assert.deepEqual(parseVerb("løper\n hopper \n\n"), ["løper", "hopper"]);
 });

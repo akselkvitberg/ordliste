@@ -24,7 +24,9 @@ trengs bare to adjektivformer: felleskjønn (m/f) og nøytrum.
 ## Mål
 
 1. Adjektiv bøyes etter det etterfølgende substantivets kjønn.
-2. To nye mønstre: «substantiv + verb» og «setning» (adj subst verb).
+2. Ett nytt mønster: «substantiv + verb». (Mønstrene «adjektiver + ett
+   substantiv» og «adjektiv + substantiv + verb» finnes allerede i koden
+   og får kjønnssamsvar.)
 3. Entropiberegningen forblir ærlig: formvalget er deterministisk og
    bidrar ikke med entropi.
 
@@ -65,30 +67,39 @@ diffbar tekst, og ordliste-fanen i nettsiden fungerer fortsatt.
 
 ### 3. Generering (`passphrase.js`)
 
-Fire mønstre, alle bygget på sykliske maler som gjentas til ønsket
-ordantall er nådd:
+Kodebasen har allerede fire mønstre (`AdjektivSubstantiv`,
+`AdjektiverSubstantiv`, `AdjektivSubstantivVerb`, `Fritt`) bygget på
+per-posisjon-pooler (`poolForPosition`). Designet bygger videre på dette:
+de eksisterende mønstrene får kjønnssamsvar, og ett nytt mønster
+(`SubstantivVerb`) legges til.
 
 | Mønster | Mal | Eksempel (6 ord) |
 |---|---|---|
-| Adjektiv + substantiv | adj, subst | blått ekorn gammel katt fint hus |
-| Substantiv + verb | subst, verb | ekorn hopper katt sover hus brenner |
-| Setning | adj, subst, verb | blått ekorn spiser gammel fisk løper |
+| Adjektiv + substantiv | adj, subst (vekselvis) | blått ekorn gammel katt fint hus |
+| Adjektiver + ett substantiv | adj × (n−1), subst | gammelt, blått, fint … hus¹ |
+| Adjektiv + substantiv + verb | adj, subst, verb (syklisk) | blått ekorn spiser gammel fisk løper |
+| Substantiv + verb (ny) | subst, verb (vekselvis) | ekorn hopper katt sover hus brenner |
 | Fritt | alle ord | (som i dag) |
+
+¹ uten komma i selve frasen.
 
 I «fritt»-mønsteret brukes m/f-formen av adjektivene i den samlede
 ordpoolen, slik at poolstørrelsen (|adjektiv| + |substantiv| + |verb|)
 og entropien er som i dag.
 
-**Samsvarsregel:** På en adjektivposisjon velges det etterfølgende
-substantivet først; adjektivformen (m/f eller nøytrum) bestemmes av
-substantivets kjønn. Står adjektivet sist uten etterfølgende substantiv
-(oddetall ordantall i adj+subst-mønsteret), brukes m/f-formen.
+**Samsvarsregel:** Et adjektiv bøyes etter det *nærmeste etterfølgende*
+substantivet i frasen. Substantivene trekkes derfor først (eller ved
+oppslag fremover), og adjektivformen (m/f eller nøytrum) bestemmes av
+kjønnet. I «adjektiver + ett substantiv» samsvarer dermed alle
+adjektivene med det avsluttende substantivet. Følger det ikke noe
+substantiv etter adjektivet (oddetall ordantall i adj+subst-mønsteret),
+brukes m/f-formen.
 
 **Entropi:** Adjektivbidraget telles per lemma — formvalget er
 deterministisk gitt substantivet og gir null ekstra entropi. Entropien
 per posisjon er dermed uendret fra i dag, og beregningen forblir ærlig.
 
-`index.html` får de to nye mønstrene i nedtrekkslisten.
+`index.html` får det nye mønsteret i nedtrekkslisten.
 
 ### 4. Feilhåndtering
 
@@ -101,9 +112,11 @@ per posisjon er dermed uendret fra i dag, og beregningen forblir ærlig.
 `test/passphrase.test.js` utvides med kontrollerte minilister:
 
 - Nøytrumssubstantiv gir nøytrumsform av adjektivet foran; m/f-substantiv
-  gir m/f-form.
+  gir m/f-form — i alle mønstre med adjektiv.
+- I «adjektiver + ett substantiv» samsvarer alle adjektivene med det
+  avsluttende substantivet.
 - Hengende adjektiv (siste posisjon) bruker m/f-form.
-- Nye mønstre følger malene sine for ulike ordantall.
+- Det nye «substantiv + verb»-mønsteret følger malen for ulike ordantall.
 - Entropi telles per adjektiv-lemma og per mal-posisjon.
 - TSV-parsingen i `loadLists` håndterer gyldige og ugyldige linjer.
 

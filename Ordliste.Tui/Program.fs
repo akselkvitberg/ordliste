@@ -4,6 +4,7 @@ open System
 open Spectre.Console
 open Ordliste.Tui.WordData
 open Ordliste.Tui.Passphrase
+open Ordliste.Tui
 
 let private rng = Random.Shared
 
@@ -194,14 +195,68 @@ let private browserScreen (lists: Map<Category, string[]>) =
         | None -> stay <- false
 
 // --------------------------------------------------------------------------
+// Regenerate word lists (runs Generate.fsx)
+// --------------------------------------------------------------------------
+
+/// Re-run the generation pipeline. Returns the freshly loaded word lists on
+/// success, or None if nothing changed (cancelled, missing data, or failure).
+let private regenerateScreen () : Map<Category, string[]> option =
+    drawHeader ()
+
+    match Pipeline.tryFindRepoRoot () with
+    | None ->
+        AnsiConsole.MarkupLine $"[red]Fant ikke {esc Pipeline.scriptName}.[/]"
+        pause ()
+        None
+    | Some repoRoot ->
+        match Pipeline.missingSourceFiles repoRoot with
+        | missing when not (List.isEmpty missing) ->
+            AnsiConsole.MarkupLine "[yellow]Mangler kildedata for å generere ordlistene:[/]"
+            missing |> List.iter (fun f -> AnsiConsole.MarkupLine $"  [red]•[/] {esc f}")
+            AnsiConsole.WriteLine()
+            AnsiConsole.MarkupLine "[grey]Last ned filene fra Språkbanken (se readme) og legg dem i:[/]"
+            AnsiConsole.MarkupLine $"  [grey]{esc repoRoot}[/]"
+            pause ()
+            None
+        | _ ->
+            AnsiConsole.MarkupLine $"[grey]Kjører[/] dotnet fsi {esc Pipeline.scriptName} [grey]i[/] {esc repoRoot}"
+
+            if not (AnsiConsole.Confirm("Dette kan ta en stund. Fortsette?", false)) then
+                None
+            else
+                AnsiConsole.WriteLine()
+                AnsiConsole.Write(Rule("[yellow]Generering[/]"))
+
+                match Pipeline.run repoRoot with
+                | Pipeline.DotnetNotFound ->
+                    AnsiConsole.MarkupLine
+                        "[red]Fant ikke 'dotnet'. Installer .NET SDK for å generere ordlistene.[/]"
+
+                    pause ()
+                    None
+                | Pipeline.Completed 0 ->
+                    AnsiConsole.WriteLine()
+                    AnsiConsole.MarkupLine "[green]Ferdig! Laster inn de nye ordlistene …[/]"
+                    let reloaded = loadAll ()
+                    pause ()
+                    Some reloaded
+                | Pipeline.Completed code ->
+                    AnsiConsole.WriteLine()
+                    AnsiConsole.MarkupLine $"[red]Generering feilet (exit-kode {code}).[/]"
+                    pause ()
+                    None
+
+// --------------------------------------------------------------------------
 // Main menu
 // --------------------------------------------------------------------------
 
-let private mainMenu (lists: Map<Category, string[]>) =
+let private mainMenu (initial: Map<Category, string[]>) =
     let genPassphrase = "Generer passord-frase"
     let browse = "Utforsk ordlistene"
+    let regenerate = "Generer ordlistene på nytt"
     let quit = "Avslutt"
 
+    let mutable lists = initial
     let mutable running = true
 
     while running do
@@ -219,12 +274,16 @@ let private mainMenu (lists: Map<Category, string[]>) =
             AnsiConsole.Prompt(
                 SelectionPrompt<string>()
                     .Title("Hva vil du gjøre?")
-                    .AddChoices([ genPassphrase; browse; quit ])
+                    .AddChoices([ genPassphrase; browse; regenerate; quit ])
             )
 
         match choice with
         | c when c = genPassphrase -> passphraseScreen lists
         | c when c = browse -> browserScreen lists
+        | c when c = regenerate ->
+            match regenerateScreen () with
+            | Some reloaded -> lists <- reloaded
+            | None -> ()
         | _ -> running <- false
 
 [<EntryPoint>]

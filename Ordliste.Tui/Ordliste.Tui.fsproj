@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="WordData.fs" />
     <Compile Include="Passphrase.fs" />
+    <Compile Include="Pipeline.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

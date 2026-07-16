@@ -14,6 +14,7 @@ Appen leser de ferdiggenererte ordlistene i `ordliste/`-mappa (`substantiv.txt`,
 
 - generere passord-fraser med valgbart mønster og antall ord, regenerere og kopiere til utklippstavla
 - bla i og søke/filtrere i hver ordliste
+- generere ordlistene på nytt ved å kjøre `Generate.fsx` (krever at kildedataene er lagt inn – se under)
 
 ## Generere ordlistene på nytt
 

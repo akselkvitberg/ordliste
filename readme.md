@@ -2,19 +2,25 @@
 
 Dette er et forsøk på å lage en liste over ord som kan brukes til å generere passord-fraser, som "korthåra tuba blekkete prøvefelt bakkete foting"
 
-## TUI
+## Nettside
 
-Prosjektet har et enkelt terminal-grensesnitt (bygget med [Spectre.Console](https://spectreconsole.net/)) for å generere passord-fraser og utforske ordlistene:
+Prosjektet har en enkel nettside for å generere passord-fraser og utforske ordlistene. Den består av statiske filer (`index.html`, `styles.css`, `app.js`, `passphrase.js`) og leser de ferdiggenererte ordlistene i `ordliste/`-mappa (`substantiv.txt`, `adjektiv.txt`, `verb.txt`).
+
+Siden må serveres over HTTP (nettleseren blokkerer `fetch` fra `file://`). Kjør en enkel lokal server fra prosjektmappa:
 
 ```
-dotnet run --project Ordliste.Tui
+python -m http.server 8000
 ```
 
-Appen leser de ferdiggenererte ordlistene i `ordliste/`-mappa (`substantiv.txt`, `adjektiv.txt`, `verb.txt`), så du trenger ikke kildedataene for å bruke den. Den lar deg:
+og åpne http://localhost:8000/ i nettleseren. Siden kan også publiseres direkte med GitHub Pages (fra rota av repoet).
 
-- generere passord-fraser med valgbart mønster og antall ord, regenerere og kopiere til utklippstavla
+Med nettsiden kan du:
+
+- generere passord-fraser med valgbart mønster (adjektiv + substantiv vekselvis, eller fritt) og antall ord, regenerere og kopiere til utklippstavla
+- se et anslag for entropi (bits) for frasen
 - bla i og søke/filtrere i hver ordliste
-- generere ordlistene på nytt ved å kjøre `Generate.fsx` (krever at kildedataene er lagt inn – se under)
+
+Ordfrasene genereres med nettleserens kryptografisk sikre tilfeldighetskilde (`crypto.getRandomValues`).
 
 ## Generere ordlistene på nytt
 

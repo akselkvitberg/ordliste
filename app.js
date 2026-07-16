@@ -1,4 +1,4 @@
-import { Pattern, generatePhrase, calcEntropyBits } from "./passphrase.js";
+import { generatePhrase, calcEntropyBits, filterWords } from "./passphrase.js";
 
 export const CATEGORIES = [
   { key: "substantiv", label: "Substantiv", file: "ordliste/substantiv.txt" },
@@ -80,6 +80,49 @@ function wireGenerator(lists) {
   generate(); // show an initial phrase
 }
 
+function wireBrowser(lists) {
+  const searchEl = $("search");
+  const resultsEl = $("results");
+  const countEl = $("count");
+  const truncatedEl = $("truncated");
+  const tabButtons = [...document.querySelectorAll("#tabs .tab")];
+  let activeKey = "substantiv";
+
+  const render = () => {
+    const all = lists[activeKey];
+    const filtered = filterWords(all, searchEl.value);
+    const shown = filtered.slice(0, RENDER_CAP);
+
+    const frag = document.createDocumentFragment();
+    for (const w of shown) {
+      const span = document.createElement("span");
+      span.textContent = w;
+      frag.appendChild(span);
+    }
+    resultsEl.replaceChildren(frag);
+
+    countEl.textContent = `Viser ${shown.length} av ${filtered.length} ord`;
+    truncatedEl.textContent =
+      filtered.length > RENDER_CAP
+        ? `… og ${filtered.length - RENDER_CAP} flere – søk for å avgrense`
+        : "";
+  };
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      activeKey = btn.dataset.key;
+      tabButtons.forEach((b) => b.classList.toggle("active", b === btn));
+      render();
+    });
+  });
+
+  searchEl.addEventListener("input", render);
+
+  // Activate the first tab and do the initial render.
+  tabButtons[0].classList.add("active");
+  render();
+}
+
 async function init() {
   let lists;
   try {
@@ -89,8 +132,7 @@ async function init() {
     return;
   }
   wireGenerator(lists);
-  // Browser section wired in Task 5.
-  window.__ordliste = { lists }; // exposed for the browser wiring in Task 5
+  wireBrowser(lists);
 }
 
 init();

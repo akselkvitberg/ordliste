@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { randomInt, generatePhrase, Pattern } from "../passphrase.js";
+import { randomInt, generatePhrase, Pattern, calcEntropyBits, filterWords } from "../passphrase.js";
 
 test("randomInt returns integers within [0, max)", () => {
   for (let i = 0; i < 1000; i++) {
@@ -45,4 +45,38 @@ test("Fritt draws only from the union of all three lists", () => {
   const union = new Set([...fixture.adjektiv, ...fixture.substantiv, ...fixture.verb]);
   const words = generatePhrase(Pattern.Fritt, 20, fixture).split(" ");
   words.forEach((w) => assert.ok(union.has(w), `unexpected word: ${w}`));
+});
+
+test("calcEntropyBits sums log2(pool) per position for AdjektivSubstantiv", () => {
+  // adjektiv pool 4 -> 2 bits, substantiv pool 8 -> 3 bits.
+  const lists = {
+    adjektiv: ["a", "b", "c", "d"],
+    substantiv: ["e", "f", "g", "h", "i", "j", "k", "l"],
+    verb: [],
+  };
+  // positions 0..3 -> adj(2)+sub(3)+adj(2)+sub(3) = 10
+  assert.equal(calcEntropyBits(Pattern.AdjektivSubstantiv, 4, lists), 10);
+});
+
+test("calcEntropyBits uses the combined pool for Fritt", () => {
+  // union size 8 -> 3 bits/word, 5 words -> 15
+  const lists = {
+    adjektiv: ["a", "b", "c", "d"],
+    substantiv: ["e", "f"],
+    verb: ["g", "h"],
+  };
+  assert.equal(calcEntropyBits(Pattern.Fritt, 5, lists), 15);
+});
+
+test("filterWords returns all words for an empty or whitespace query", () => {
+  const words = ["kake", "bord", "lampe"];
+  assert.deepEqual(filterWords(words, ""), words);
+  assert.deepEqual(filterWords(words, "   "), words);
+});
+
+test("filterWords matches case-insensitive substrings and trims the query", () => {
+  const words = ["kake", "bakke", "bord"];
+  assert.deepEqual(filterWords(words, "ak"), ["kake", "bakke"]);
+  assert.deepEqual(filterWords(words, "  AK  "), ["kake", "bakke"]);
+  assert.deepEqual(filterWords(words, "xyz"), []);
 });

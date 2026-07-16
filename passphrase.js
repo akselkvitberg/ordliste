@@ -48,3 +48,31 @@ export function generatePhrase(pattern, wordCount, lists) {
   }
   return words.join(" ");
 }
+
+/**
+ * Approximate entropy in bits, rounded to a whole number.
+ * Per-position pool size:
+ *   Fritt              -> |adjektiv| + |substantiv| + |verb|
+ *   AdjektivSubstantiv -> |adjektiv| on even positions, |substantiv| on odd
+ */
+export function calcEntropyBits(pattern, wordCount, lists) {
+  const alleSize = lists.adjektiv.length + lists.substantiv.length + lists.verb.length;
+  let bits = 0;
+  for (let i = 0; i < wordCount; i++) {
+    let pool;
+    if (pattern === Pattern.AdjektivSubstantiv) {
+      pool = i % 2 === 0 ? lists.adjektiv.length : lists.substantiv.length;
+    } else {
+      pool = alleSize;
+    }
+    bits += Math.log2(pool);
+  }
+  return Math.round(bits);
+}
+
+/** Case-insensitive substring filter. Empty/whitespace query returns all. */
+export function filterWords(words, query) {
+  const q = query.trim().toLowerCase();
+  if (q === "") return words;
+  return words.filter((w) => w.toLowerCase().includes(q));
+}

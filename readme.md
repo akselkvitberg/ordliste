@@ -2,7 +2,20 @@
 
 Dette er et forsøk på å lage en liste over ord som kan brukes til å generere passord-fraser, som "korthåra tuba blekkete prøvefelt bakkete foting"
 
-Hvordan kjøre lokalt
+## TUI
+
+Prosjektet har et enkelt terminal-grensesnitt (bygget med [Spectre.Console](https://spectreconsole.net/)) for å generere passord-fraser og utforske ordlistene:
+
+```
+dotnet run --project Ordliste.Tui
+```
+
+Appen leser de ferdiggenererte ordlistene i `ordliste/`-mappa (`substantiv.txt`, `adjektiv.txt`, `verb.txt`), så du trenger ikke kildedataene for å bruke den. Den lar deg:
+
+- generere passord-fraser med valgbart mønster og antall ord, regenerere og kopiere til utklippstavla
+- bla i og søke/filtrere i hver ordliste
+
+## Generere ordlistene på nytt
 
 Last ned Norsk Ordbank fra Språkbanken: https://www.nb.no/sprakbanken/ressurskatalog/oai-nb-no-sbr-5/
 

@@ -1,2 +1,6 @@
 fullformsliste.txt
 ngram-2022-digibok-unigram.csv
+
+# .NET build output
+bin/
+obj/

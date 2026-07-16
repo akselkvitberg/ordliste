@@ -38,6 +38,7 @@ function showError() {
     const c = $(id);
     if (c) c.disabled = true;
   });
+  document.querySelectorAll("#tabs .tab").forEach((b) => (b.disabled = true));
 }
 
 function wireGenerator(lists) {

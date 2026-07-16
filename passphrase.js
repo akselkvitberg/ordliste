@@ -32,12 +32,24 @@ function pick(arr) {
   return arr[randomInt(arr.length)];
 }
 
+/** Throw if `pattern` is not one of the known Pattern values. */
+function assertKnownPattern(pattern) {
+  if (pattern !== Pattern.AdjektivSubstantiv && pattern !== Pattern.Fritt) {
+    throw new Error(`Ukjent mønster: ${pattern}`);
+  }
+}
+
 /**
  * Generate a space-separated passphrase.
  * lists = { adjektiv: string[], substantiv: string[], verb: string[] }
  */
 export function generatePhrase(pattern, wordCount, lists) {
-  const alle = lists.adjektiv.concat(lists.substantiv, lists.verb);
+  assertKnownPattern(pattern);
+  // Only the free-mix pattern needs the combined pool; don't allocate it otherwise.
+  const alle =
+    pattern === Pattern.Fritt
+      ? lists.adjektiv.concat(lists.substantiv, lists.verb)
+      : null;
   const words = [];
   for (let i = 0; i < wordCount; i++) {
     if (pattern === Pattern.AdjektivSubstantiv) {
@@ -56,6 +68,7 @@ export function generatePhrase(pattern, wordCount, lists) {
  *   AdjektivSubstantiv -> |adjektiv| on even positions, |substantiv| on odd
  */
 export function calcEntropyBits(pattern, wordCount, lists) {
+  assertKnownPattern(pattern);
   const alleSize = lists.adjektiv.length + lists.substantiv.length + lists.verb.length;
   let bits = 0;
   for (let i = 0; i < wordCount; i++) {

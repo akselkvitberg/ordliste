@@ -47,6 +47,14 @@ test("Fritt draws only from the union of all three lists", () => {
   words.forEach((w) => assert.ok(union.has(w), `unexpected word: ${w}`));
 });
 
+test("generatePhrase throws on an unknown pattern", () => {
+  assert.throws(() => generatePhrase("bogus", 4, fixture), /Ukjent mønster/);
+});
+
+test("calcEntropyBits throws on an unknown pattern", () => {
+  assert.throws(() => calcEntropyBits("bogus", 4, fixture), /Ukjent mønster/);
+});
+
 test("calcEntropyBits sums log2(pool) per position for AdjektivSubstantiv", () => {
   // adjektiv pool 4 -> 2 bits, substantiv pool 8 -> 3 bits.
   const lists = {

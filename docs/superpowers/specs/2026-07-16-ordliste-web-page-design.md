@@ -68,10 +68,10 @@ UI (Norwegian):
 - **Kopier**-button — copies the current phrase via the async Clipboard API,
   showing a brief "Kopiert!" confirmation; on failure shows a fallback message.
 - **Strength readout** — approximate entropy shown as e.g. "≈ 80 bits",
-  computed as `wordCount × log2(poolSize)`, where `poolSize` is the list the
-  word is drawn from (for *vekselvis*, average the adjektiv/substantiv pool
-  sizes across positions; for *fritt*, the combined pool size). Rounded to a
-  whole number of bits.
+  computed as the sum over positions of `log2(poolSize)`, where `poolSize`
+  is the pool the word at that position is drawn from (for *vekselvis*,
+  `|adjektiv|` on even positions and `|substantiv|` on odd; for *fritt*, the
+  combined pool size at every position). Rounded to a whole number of bits.
 
 Generation logic:
 

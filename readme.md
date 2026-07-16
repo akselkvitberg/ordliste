@@ -13,7 +13,7 @@ Filene som er relevante er fullformsliste.txt fra ordbanken og ngram-2022-digibo
 
 Legg inn ord som skal svartelistes i svarteliste.txt
 
-Åpne Generator.dib i VS Code med Polyglot Notebook extension installert og kjør alle cellene i notebooken.
+Kjør scriptet med `dotnet fsi Generate.fsx` (krever .NET SDK med F# installert).
 
 Kilder: 
 [Norsk Ordbank (CC-BY)](https://www.nb.no/sprakbanken/ressurskatalog/oai-nb-no-sbr-5/)

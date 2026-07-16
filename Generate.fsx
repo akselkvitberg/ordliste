@@ -1,52 +1,39 @@
-#!meta
-
-{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"},{"aliases":[],"languageName":"fsharp","name":"fsharp"}]}}
-
-#!fsharp
-
 #r "nuget: FSharp.Data"
+
+open System
+open System.IO
 open FSharp.Data
 open System.Text.RegularExpressions
-
-#!fsharp
 
 [<Literal>]
 let FullformListePath = "fullformsliste.txt"
 type FullformListe = CsvProvider<FullformListePath, "\t", Encoding = "iso-8859-1">
 
-#!fsharp
-
 [<Literal>]
 let WordFreqPath = "ngram-2022-digibok-unigram.csv"
 type WordFreq = CsvProvider<WordFreqPath>
 
-#!markdown
-
-First we collect all the valid words from the Ordbank fullformsliste.
-
-#!fsharp
+// First we collect all the valid words from the Ordbank fullformsliste.
 
 let normaliser (line:string) = line.Trim().ToLowerInvariant().Replace("aa", "å")
 
 let onlyValidLetterRegex = new Regex("^[a-zA-ZÆæØøÅå]+$");
-let isValidWord word = 
+let isValidWord word =
     onlyValidLetterRegex.Match(word).Success && // Exclude strings with hyphens, weird letters and aposrophs
     word.Length > 3 && word.Length < 10 && // Limit to words between 3 and 10 characters long for convenience
     (word.ToCharArray() |> Array.distinct |> Array.length) > 1 // Not just one character repeated such as AAAA
 
 let isInWordClass (wordClass:string) (tags:string) = tags.Contains(wordClass)
 
-let bannedWords = 
+let bannedWords =
     File.ReadAllLines(@"svarteliste.txt")
     |> Array.map normaliser
     |> Array.filter (fun x -> x <> "")
 let isNotABannedWord (word:string) = bannedWords |> Array.exists (fun (w:string) -> word.Contains(w)) |> not
 
-#!fsharp
-
 type WordRow = {OPPSLAG: string; TAG: string; BOY_NUMMER: int; LEMMA_ID: int}
 
-let listOfValidWords = 
+let listOfValidWords =
     FullformListe.GetSample().Rows
     |> Seq.map (fun r -> {OPPSLAG = normaliser r.OPPSLAG; TAG = r.TAG; BOY_NUMMER = r.BOY_NUMMER; LEMMA_ID = r.LEMMA_ID})
     |> Seq.where (fun r -> isValidWord r.OPPSLAG)
@@ -58,15 +45,13 @@ let isInListOfValidWords =
     let test word = Set.contains word set
     test
 
-let collapseWords input = 
-    input 
+let collapseWords input =
+    input
     |> Seq.distinctBy (fun r -> r.LEMMA_ID)
     |> Seq.map (fun r -> r.OPPSLAG)
     |> Seq.sort
     |> Seq.distinct
     |> Seq.toArray
-
-#!fsharp
 
 let verb =
     listOfValidWords
@@ -74,16 +59,12 @@ let verb =
     |> Seq.where (fun r -> r.BOY_NUMMER = 2) // we only care about type "presens"
     |> collapseWords
 
-#!fsharp
-
-let adjektiv = 
+let adjektiv =
     listOfValidWords
     |> Seq.where (fun r -> isInWordClass "adj" r.TAG)
     |> Seq.where (fun r -> r.BOY_NUMMER = 1) // we only care about type "entall ubestemt"
     |> Seq.where (fun r -> Array.contains r.OPPSLAG verb |> not) // Reject words that can also be mistaken for verbs
     |> collapseWords
-
-#!fsharp
 
 let substantiv =
     listOfValidWords
@@ -94,19 +75,15 @@ let substantiv =
     |> Seq.where (fun r -> Array.contains r.OPPSLAG adjektiv |> not) // Reject words that can also be mistaken for adjektives
     |> collapseWords
 
-#!markdown
+// Now that we have a list of words that are acceptable, let's find the most commonly used words so that we have something useful to work with
 
-Now that we have a list of words that are acceptable, let's find the most commonly used words so that we have something useful to work with
-
-#!fsharp
-
-let groupData (list:(string*int) seq) = 
+let groupData (list:(string*int) seq) =
     list
     |> Seq.map (fun (str, freq) -> str.ToLowerInvariant(), freq)
     |> Seq.groupBy (fun (str, freq) -> str)
     |> Seq.map (fun (key, items) -> key, items |> Seq.sumBy snd)
 
-let wordsWithFrequency = 
+let wordsWithFrequency =
     WordFreq.GetSample().Rows
     |> Seq.where (fun r -> r.Lang = "nob")
     |> Seq.map (fun r -> normaliser r.First, r.Freq)
@@ -116,9 +93,7 @@ let wordsWithFrequency =
     |> Seq.sortByDescending snd
     |> Seq.toArray
 
-wordsWithFrequency.Length
-
-#!fsharp
+printfn "%d" wordsWithFrequency.Length
 
 let verbSet = verb |> Set
 let adjektivSet = adjektiv |> Set
@@ -128,11 +103,9 @@ let adjektivWithFrequency = wordsWithFrequency |> Array.filter (fun (word,_) -> 
 let verbWithFrequency = wordsWithFrequency |> Array.filter (fun (word,_) -> Set.contains word verbSet)
 let substantivWithFrequency = wordsWithFrequency |> Array.filter (fun (word,_) -> Set.contains word substantivSet)
 
-{|Substantiver = substantivWithFrequency.Length; Adjektiver = adjektivWithFrequency.Length; Verb = verbWithFrequency.Length|}
+printfn "%A" {|Substantiver = substantivWithFrequency.Length; Adjektiver = adjektivWithFrequency.Length; Verb = verbWithFrequency.Length|}
 
-#!fsharp
-
-Directory.CreateDirectory("ordliste")
+Directory.CreateDirectory("ordliste") |> ignore
 
 let saveToFile count fileName items =
     items
@@ -145,11 +118,9 @@ saveToFile 10_000 "substantiv" substantivWithFrequency
 saveToFile 10_000 "adjektiv" adjektivWithFrequency
 saveToFile 5_000 "verb" verbWithFrequency
 
-#!fsharp
-
 let random (list:string array) = list[Random.Shared.Next(list.Length)]
 
 let AdjSub () =
     sprintf "%s %s %s %s %s %s" (random adjektiv) (random substantiv) (random adjektiv) (random substantiv) (random adjektiv) (random substantiv)
 
-AdjSub()
+printfn "%s" (AdjSub())

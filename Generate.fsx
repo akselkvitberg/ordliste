@@ -87,8 +87,10 @@ let kjonnFromTag (tag: string) =
     else None
 
 // Substantiv med kjønn. Ord som finnes i flere kjønn (f.eks. "ekorn") får
-// kjønnet med flest rader; ved likhet prioriteres mask > fem > nøyt — alle
+// kjønnet med flest rader; ved likhet prioriteres fem > mask > nøyt — alle
 // variantene er grammatisk korrekte, valget handler bare om determinisme.
+// (Fem først: Ordbanken har parallelle hankjønnsrader for nesten alle
+// hunkjønnsord, så mask først ville gitt ~0 f-ord.)
 let kjonnForSubstantiv =
     listOfValidWords
     |> Seq.where (fun r -> isInWordClass "subst" r.TAG)
@@ -99,7 +101,7 @@ let kjonnForSubstantiv =
     |> Seq.choose (fun r -> kjonnFromTag r.TAG |> Option.map (fun k -> r.OPPSLAG, k))
     |> Seq.groupBy fst
     |> Seq.map (fun (word, items) ->
-        let prioritet = function "m" -> 0 | "f" -> 1 | _ -> 2
+        let prioritet = function "f" -> 0 | "m" -> 1 | _ -> 2
         let kjonn =
             items
             |> Seq.countBy snd

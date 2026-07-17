@@ -1,4 +1,4 @@
-#r "nuget: FSharp.Data"
+#r "nuget: FSharp.Data, 6.4.1"
 
 open System
 open System.IO
@@ -59,21 +59,57 @@ let verb =
     |> Seq.where (fun r -> r.BOY_NUMMER = 2) // we only care about type "presens"
     |> collapseWords
 
-let adjektiv =
+// Adjektiv: par av (m/f-form, nøytrumsform) per lemma, koblet via LEMMA_ID.
+// BOY_NUMMER 1 = "pos m/f ub ent" (fin), BOY_NUMMER 4 = "pos nøyt ub ent" (fint).
+// Lemmaer uten gyldig nøytrumsform gjenbruker m/f-formen (f.eks. "moderne").
+let adjektivPairs =
     listOfValidWords
     |> Seq.where (fun r -> isInWordClass "adj" r.TAG)
-    |> Seq.where (fun r -> r.BOY_NUMMER = 1) // we only care about type "entall ubestemt"
-    |> Seq.where (fun r -> Array.contains r.OPPSLAG verb |> not) // Reject words that can also be mistaken for verbs
-    |> collapseWords
+    |> Seq.where (fun r -> r.BOY_NUMMER = 1 || r.BOY_NUMMER = 4)
+    |> Seq.groupBy (fun r -> r.LEMMA_ID)
+    |> Seq.choose (fun (_, rows) ->
+        let form n = rows |> Seq.tryFind (fun r -> r.BOY_NUMMER = n) |> Option.map (fun r -> r.OPPSLAG)
+        match form 1 with
+        | Some mf -> Some (mf, form 4 |> Option.defaultValue mf)
+        | None -> None)
+    |> Seq.where (fun (mf, _) -> Array.contains mf verb |> not) // Reject words that can also be mistaken for verbs
+    |> Seq.sortBy fst
+    |> Seq.distinctBy fst
+    |> Seq.toArray
 
-let substantiv =
+let adjektiv = adjektivPairs |> Array.map fst
+let noytFormForAdjektiv = adjektivPairs |> Map.ofArray
+
+let kjonnFromTag (tag: string) =
+    if tag.Contains("mask") then Some "m"
+    elif tag.Contains("fem") then Some "f"
+    elif tag.Contains("nøyt") then Some "n"
+    else None
+
+// Substantiv med kjønn. Ord som finnes i flere kjønn (f.eks. "ekorn") får
+// kjønnet med flest rader; ved likhet prioriteres mask > fem > nøyt — alle
+// variantene er grammatisk korrekte, valget handler bare om determinisme.
+let kjonnForSubstantiv =
     listOfValidWords
     |> Seq.where (fun r -> isInWordClass "subst" r.TAG)
-    |> Seq.where (fun r -> isInWordClass "prop" r.TAG |> not ) // ignore proper nouns
+    |> Seq.where (fun r -> isInWordClass "prop" r.TAG |> not) // ignore proper nouns
     |> Seq.where (fun r -> r.BOY_NUMMER = 1) // we only care about type "entall ubestemt"
     |> Seq.where (fun r -> Array.contains r.OPPSLAG verb |> not) // Reject words that can also be mistaken for verbs
     |> Seq.where (fun r -> Array.contains r.OPPSLAG adjektiv |> not) // Reject words that can also be mistaken for adjektives
-    |> collapseWords
+    |> Seq.choose (fun r -> kjonnFromTag r.TAG |> Option.map (fun k -> r.OPPSLAG, k))
+    |> Seq.groupBy fst
+    |> Seq.map (fun (word, items) ->
+        let prioritet = function "m" -> 0 | "f" -> 1 | _ -> 2
+        let kjonn =
+            items
+            |> Seq.countBy snd
+            |> Seq.sortBy (fun (g, antall) -> (-antall, prioritet g))
+            |> Seq.head
+            |> fst
+        word, kjonn)
+    |> Map.ofSeq
+
+let substantiv = kjonnForSubstantiv |> Map.toArray |> Array.map fst
 
 // Now that we have a list of words that are acceptable, let's find the most commonly used words so that we have something useful to work with
 
@@ -107,20 +143,17 @@ printfn "%A" {|Substantiver = substantivWithFrequency.Length; Adjektiver = adjek
 
 Directory.CreateDirectory("ordliste") |> ignore
 
-let saveToFile count fileName items =
-    items
-    |> Array.take count
-    |> Array.map fst
-    |> Array.sort
-    |> fun arr -> File.WriteAllLines($"ordliste//{fileName}.txt", arr)
+let topWords count items = items |> Array.take count |> Array.map fst |> Array.sort
 
-saveToFile 10_000 "substantiv" substantivWithFrequency
-saveToFile 10_000 "adjektiv" adjektivWithFrequency
-saveToFile 5_000 "verb" verbWithFrequency
+let saveLines fileName (lines: string seq) =
+    File.WriteAllLines($"ordliste//{fileName}.txt", lines)
 
-let random (list:string array) = list[Random.Shared.Next(list.Length)]
+topWords 10_000 substantivWithFrequency
+|> Seq.map (fun w -> sprintf "%s\t%s" w (Map.find w kjonnForSubstantiv))
+|> saveLines "substantiv"
 
-let AdjSub () =
-    sprintf "%s %s %s %s %s %s" (random adjektiv) (random substantiv) (random adjektiv) (random substantiv) (random adjektiv) (random substantiv)
+topWords 10_000 adjektivWithFrequency
+|> Seq.map (fun w -> sprintf "%s\t%s" w (Map.find w noytFormForAdjektiv))
+|> saveLines "adjektiv"
 
-printfn "%s" (AdjSub())
+topWords 5_000 verbWithFrequency |> saveLines "verb"

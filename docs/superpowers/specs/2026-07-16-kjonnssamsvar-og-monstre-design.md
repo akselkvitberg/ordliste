@@ -43,8 +43,11 @@ diffbar tekst, og ordliste-fanen i nettsiden fungerer fortsatt.
 - Kjønn (`m`/`f`/`n`) leses fra taggen for rader med BOY_NUMMER 1.
 - Ord med flere kjønn (f.eks. «ekorn» er både mask og nøyt) får ett kjønn
   deterministisk: kjønnet med flest rader for ordet; ved likhet
-  prioriteres mask > fem > nøyt. Alle variantene er grammatisk korrekte,
-  valget handler bare om determinisme.
+  prioriteres fem > mask > nøyt. Alle variantene er grammatisk korrekte,
+  valget handler bare om determinisme og visning. (Fem først fordi
+  Ordbanken etter 2005-reformen registrerer et parallelt
+  hankjønnsparadigme for nesten alle hunkjønnsord — mask først ville
+  kollapset nesten alt hunkjønn til `m`.)
 
 **Adjektiv** (`ordliste/adjektiv.txt`, linjer `m/f-form<TAB>nøytrumsform`):
 

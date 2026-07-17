@@ -1,9 +1,16 @@
-import { generatePhrase, calcEntropyBits, filterWords } from "./passphrase.js";
+import {
+  generatePhrase,
+  calcEntropyBits,
+  filterWords,
+  parseSubstantiv,
+  parseAdjektiv,
+  parseVerb,
+} from "./passphrase.js";
 
 export const CATEGORIES = [
-  { key: "substantiv", label: "Substantiv", file: "ordliste/substantiv.txt" },
-  { key: "adjektiv", label: "Adjektiv", file: "ordliste/adjektiv.txt" },
-  { key: "verb", label: "Verb", file: "ordliste/verb.txt" },
+  { key: "substantiv", label: "Substantiv", file: "ordliste/substantiv.txt", parse: parseSubstantiv },
+  { key: "adjektiv", label: "Adjektiv", file: "ordliste/adjektiv.txt", parse: parseAdjektiv },
+  { key: "verb", label: "Verb", file: "ordliste/verb.txt", parse: parseVerb },
 ];
 
 export const RENDER_CAP = 300;
@@ -14,12 +21,7 @@ export async function loadLists() {
     CATEGORIES.map(async (c) => {
       const res = await fetch(c.file);
       if (!res.ok) throw new Error(`${c.file}: HTTP ${res.status}`);
-      const text = await res.text();
-      const words = text
-        .split(/\r?\n/)
-        .map((w) => w.trim())
-        .filter((w) => w !== "");
-      return [c.key, words];
+      return [c.key, c.parse(await res.text())];
     })
   );
   return Object.fromEntries(entries);
@@ -89,8 +91,17 @@ function wireBrowser(lists) {
   const tabButtons = [...document.querySelectorAll("#tabs .tab")];
   let activeKey = "substantiv";
 
+  // Visningsstrenger for ordliste-fanen: substantiv med kjønn, adjektiv med
+  // begge former (én form når de er like, f.eks. "moderne"). Søket treffer
+  // dermed begge adjektivformene.
+  const displayLists = {
+    substantiv: lists.substantiv.map((s) => `${s.ord} (${s.kjonn})`),
+    adjektiv: lists.adjektiv.map((a) => (a.mf === a.noyt ? a.mf : `${a.mf} / ${a.noyt}`)),
+    verb: lists.verb,
+  };
+
   const render = () => {
-    const all = lists[activeKey];
+    const all = displayLists[activeKey];
     const filtered = filterWords(all, searchEl.value);
     const shown = filtered.slice(0, RENDER_CAP);
 

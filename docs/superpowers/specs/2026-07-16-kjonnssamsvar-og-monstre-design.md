@@ -51,11 +51,19 @@ diffbar tekst, og ordliste-fanen i nettsiden fungerer fortsatt.
 
 **Adjektiv** (`ordliste/adjektiv.txt`, linjer `m/f-form<TAB>nøytrumsform`):
 
-- Per lemma pares BOY_NUMMER 1-formen med BOY_NUMMER 4-formen via
-  `LEMMA_ID`.
+- Per lemma pares formene via `LEMMA_ID`, valgt på tag: m/f-formen fra
+  rader med `adj pos m/f ub ent`, nøytrumsformen fra rader med
+  `adj pos nøyt ub ent`. (`BOY_NUMMER` er paradigme-relativ og kan ikke
+  brukes — i liten-paradigmet er «lite» nummer 3 og bestemt form «lille»
+  nummer 4. Tag-matchen utelukker også determinativer som «annen»/«selv»,
+  som er tagget `det dem <adj>`.)
 - Mangler nøytrumsform (f.eks. «moderne»), gjenbrukes m/f-formen.
-- Begge former må passere gyldighetsfilteret (`isValidWord`) og
-  svartelisten.
+- M/f-formen må passere gyldighetsfilteret (`isValidWord`) og
+  svartelisten. Nøytrumsformen er avledet (trekkes aldri selvstendig) og
+  slipper lengdetaket på 9 tegn — «knallhardt» (10) er gyldig — men må
+  bestå bokstav- og svartelistefilteret.
+- Deler to lemmaer samme m/f-form, foretrekkes paret med egen
+  nøytrumsform (deterministisk, robust mot radrekkefølge i kilden).
 - Frekvensfiltrering skjer som før på m/f-formen.
 
 **Verb** (`ordliste/verb.txt`): uendret — presensformer, ren tekstliste.

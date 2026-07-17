@@ -1,3 +1,5 @@
+// 6.4.1 er bevisst pinnet: upinnet versjon feiler/mis-parser den >1 GB
+// store ngram-CSV-en under design-time sample-oppløsning. Ikke fjern pinnen.
 #r "nuget: FSharp.Data, 6.4.1"
 
 open System
@@ -33,9 +35,13 @@ let isNotABannedWord (word:string) = bannedWords |> Array.exists (fun (w:string)
 
 type WordRow = {OPPSLAG: string; TAG: string; BOY_NUMMER: int; LEMMA_ID: int}
 
-let listOfValidWords =
+let allRows =
     FullformListe.GetSample().Rows
     |> Seq.map (fun r -> {OPPSLAG = normaliser r.OPPSLAG; TAG = r.TAG; BOY_NUMMER = r.BOY_NUMMER; LEMMA_ID = r.LEMMA_ID})
+    |> Seq.cache
+
+let listOfValidWords =
+    allRows
     |> Seq.where (fun r -> isValidWord r.OPPSLAG)
     |> Seq.where (fun r -> isNotABannedWord r.OPPSLAG)
     |> Seq.cache
@@ -59,21 +65,44 @@ let verb =
     |> Seq.where (fun r -> r.BOY_NUMMER = 2) // we only care about type "presens"
     |> collapseWords
 
-// Adjektiv: par av (m/f-form, nøytrumsform) per lemma, koblet via LEMMA_ID.
-// BOY_NUMMER 1 = "pos m/f ub ent" (fin), BOY_NUMMER 4 = "pos nøyt ub ent" (fint).
-// Lemmaer uten gyldig nøytrumsform gjenbruker m/f-formen (f.eks. "moderne").
+// Adjektiv: par av (m/f-form, nøytrumsform) per lemma, valgt på tag
+// ("adj pos m/f ub ent" / "adj pos nøyt ub ent") og koblet via LEMMA_ID.
+// BOY_NUMMER er paradigme-relativ og kan ikke brukes: i liten-paradigmet
+// er "lite" nummer 3 og bestemt form "lille" nummer 4. Tag-matchen
+// utelukker også determinativer ("det dem <adj> ..." for annen/selv/egen).
+// Nøytrumsformen er avledet (trekkes aldri selvstendig) og slipper derfor
+// lengdetaket — "knallhardt" (10 tegn) er gyldig — men må bestå bokstav-
+// og svartelistefilteret.
+let isValidDerivedForm (word: string) =
+    onlyValidLetterRegex.Match(word).Success &&
+    word.Length > 3 &&
+    (word.ToCharArray() |> Array.distinct |> Array.length) > 1 &&
+    isNotABannedWord word
+
 let adjektivPairs =
-    listOfValidWords
-    |> Seq.where (fun r -> isInWordClass "adj" r.TAG)
-    |> Seq.where (fun r -> r.BOY_NUMMER = 1 || r.BOY_NUMMER = 4)
+    allRows
+    |> Seq.where (fun r -> r.TAG.Contains("adj pos m/f ub ent") || r.TAG.Contains("adj pos nøyt ub ent"))
     |> Seq.groupBy (fun r -> r.LEMMA_ID)
     |> Seq.choose (fun (_, rows) ->
-        let form n = rows |> Seq.tryFind (fun r -> r.BOY_NUMMER = n) |> Option.map (fun r -> r.OPPSLAG)
-        match form 1 with
-        | Some mf -> Some (mf, form 4 |> Option.defaultValue mf)
+        let mf =
+            rows
+            |> Seq.tryFind (fun r -> r.TAG.Contains("adj pos m/f ub ent") && isValidWord r.OPPSLAG && isNotABannedWord r.OPPSLAG)
+            |> Option.map (fun r -> r.OPPSLAG)
+        match mf with
+        | Some mf ->
+            let noyt =
+                rows
+                |> Seq.tryPick (fun r ->
+                    if r.TAG.Contains("adj pos nøyt ub ent") && isValidDerivedForm r.OPPSLAG
+                    then Some r.OPPSLAG
+                    else None)
+                |> Option.defaultValue mf
+            Some (mf, noyt)
         | None -> None)
     |> Seq.where (fun (mf, _) -> Array.contains mf verb |> not) // Reject words that can also be mistaken for verbs
-    |> Seq.sortBy fst
+    // Deler to lemmaer samme m/f-form, vinner paret med egen nøytrumsform
+    // (deterministisk, robust mot radrekkefølgen i kilden).
+    |> Seq.sortBy (fun (mf, noyt) -> (mf, (if mf = noyt then 1 else 0), noyt))
     |> Seq.distinctBy fst
     |> Seq.toArray
 

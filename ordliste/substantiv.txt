@@ -3714,7 +3714,6 @@ islett	n
 isme	m
 isolasjon	m
 isolat	n
-isolator	m
 isolering	f
 isse	m
 ister	n
@@ -3852,7 +3851,6 @@ kake	f
 kakkelovn	m
 kaktus	m
 kala	m
-kalas	n
 kalender	m
 kali	n
 kaliber	n
@@ -5778,6 +5776,7 @@ nesebor	n
 neshorn	n
 nesle	f
 nest	n
+neste	m
 nestemann	m
 nestleder	m
 nestor	m
@@ -7337,6 +7336,7 @@ selle	m
 selleri	m
 selskap	n
 selters	m
+selv	n
 selvbilde	n
 selveier	m
 selvfølge	m
@@ -8833,6 +8833,7 @@ tidspunkt	n
 tidsramme	f
 tidsrom	n
 tidstap	n
+tiende	m
 tiendedel	m
 tiger	m
 tigging	f
@@ -9726,7 +9727,6 @@ vilje	m
 vilkår	n
 villa	m
 villaks	m
-villand	f
 villdyr	n
 ville	f
 villelse	m

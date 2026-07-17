@@ -31,11 +31,33 @@ test("randomInt rejects non-positive or non-integer max", () => {
   assert.throws(() => randomInt(2.5));
 });
 
+// Fixture med bare m/f-substantiv: adjektiver skal da alltid stå i m/f-form.
 const fixture = {
-  adjektiv: ["A1", "A2"],
-  substantiv: ["S1", "S2"],
-  verb: ["V1"],
+  adjektiv: [
+    { mf: "fin", noyt: "fint" },
+    { mf: "blå", noyt: "blått" },
+  ],
+  substantiv: [
+    { ord: "katt", kjonn: "m" },
+    { ord: "bok", kjonn: "f" },
+  ],
+  verb: ["løper"],
 };
+
+// Fixture med bare nøytrumssubstantiv: adjektiver foran substantiv skal stå i nøytrum.
+const noytFixture = {
+  adjektiv: fixture.adjektiv,
+  substantiv: [
+    { ord: "hus", kjonn: "n" },
+    { ord: "eple", kjonn: "n" },
+  ],
+  verb: ["brenner"],
+};
+
+const adjMf = ["fin", "blå"];
+const adjNoyt = ["fint", "blått"];
+const substOrd = ["katt", "bok"];
+const noytOrd = ["hus", "eple"];
 
 test("generatePhrase produces the requested number of words", () => {
   const phrase = generatePhrase(Pattern.Fritt, 4, fixture);
@@ -45,49 +67,105 @@ test("generatePhrase produces the requested number of words", () => {
 test("AdjektivSubstantiv alternates adjektiv (even) and substantiv (odd)", () => {
   const words = generatePhrase(Pattern.AdjektivSubstantiv, 6, fixture).split(" ");
   words.forEach((w, i) => {
-    if (i % 2 === 0) assert.ok(fixture.adjektiv.includes(w), `pos ${i} not adjektiv: ${w}`);
-    else assert.ok(fixture.substantiv.includes(w), `pos ${i} not substantiv: ${w}`);
+    if (i % 2 === 0) assert.ok(adjMf.includes(w), `pos ${i} not adjektiv: ${w}`);
+    else assert.ok(substOrd.includes(w), `pos ${i} not substantiv: ${w}`);
   });
 });
 
-test("Fritt draws only from the union of all three lists", () => {
-  const union = new Set([...fixture.adjektiv, ...fixture.substantiv, ...fixture.verb]);
+test("Fritt draws only from mf-forms, substantiv and verb", () => {
+  const union = new Set([...adjMf, ...substOrd, ...fixture.verb]);
   const words = generatePhrase(Pattern.Fritt, 20, fixture).split(" ");
   words.forEach((w) => assert.ok(union.has(w), `unexpected word: ${w}`));
 });
 
 test("AdjektiverSubstantiv is (n-1) adjektiv followed by one substantiv", () => {
   const words = generatePhrase(Pattern.AdjektiverSubstantiv, 5, fixture).split(" ");
-  words.slice(0, -1).forEach((w, i) => assert.ok(fixture.adjektiv.includes(w), `pos ${i} not adjektiv: ${w}`));
-  assert.ok(fixture.substantiv.includes(words[words.length - 1]), `last not substantiv: ${words.at(-1)}`);
+  words.slice(0, -1).forEach((w, i) => assert.ok(adjMf.includes(w), `pos ${i} not adjektiv: ${w}`));
+  assert.ok(substOrd.includes(words.at(-1)), `last not substantiv: ${words.at(-1)}`);
 });
 
 test("AdjektivSubstantivVerb cycles adjektiv, substantiv, verb", () => {
-  const byClass = [fixture.adjektiv, fixture.substantiv, fixture.verb];
+  const byClass = [adjMf, substOrd, fixture.verb];
   const words = generatePhrase(Pattern.AdjektivSubstantivVerb, 7, fixture).split(" ");
   words.forEach((w, i) => assert.ok(byClass[i % 3].includes(w), `pos ${i} wrong class: ${w}`));
 });
 
+test("SubstantivVerb alternates substantiv (even) and verb (odd)", () => {
+  const words = generatePhrase(Pattern.SubstantivVerb, 6, fixture).split(" ");
+  words.forEach((w, i) => {
+    if (i % 2 === 0) assert.ok(substOrd.includes(w), `pos ${i} not substantiv: ${w}`);
+    else assert.ok(fixture.verb.includes(w), `pos ${i} not verb: ${w}`);
+  });
+});
+
+test("adjektiv foran nøytrumssubstantiv får nøytrumsform", () => {
+  const words = generatePhrase(Pattern.AdjektivSubstantiv, 4, noytFixture).split(" ");
+  assert.ok(adjNoyt.includes(words[0]), `pos 0 not nøytrum: ${words[0]}`);
+  assert.ok(adjNoyt.includes(words[2]), `pos 2 not nøytrum: ${words[2]}`);
+});
+
+test("adjektiv foran m/f-substantiv får m/f-form", () => {
+  const words = generatePhrase(Pattern.AdjektivSubstantiv, 4, fixture).split(" ");
+  assert.ok(adjMf.includes(words[0]), `pos 0 not m/f: ${words[0]}`);
+  assert.ok(adjMf.includes(words[2]), `pos 2 not m/f: ${words[2]}`);
+});
+
+test("alle adjektivene i AdjektiverSubstantiv samsvarer med sluttsubstantivet", () => {
+  const words = generatePhrase(Pattern.AdjektiverSubstantiv, 5, noytFixture).split(" ");
+  words.slice(0, -1).forEach((w, i) => assert.ok(adjNoyt.includes(w), `pos ${i} not nøytrum: ${w}`));
+  assert.ok(noytOrd.includes(words.at(-1)));
+});
+
+test("AdjektivSubstantivVerb bøyer adjektivet etter neste substantiv", () => {
+  const words = generatePhrase(Pattern.AdjektivSubstantivVerb, 6, noytFixture).split(" ");
+  assert.ok(adjNoyt.includes(words[0]), `pos 0 not nøytrum: ${words[0]}`);
+  assert.ok(adjNoyt.includes(words[3]), `pos 3 not nøytrum: ${words[3]}`);
+});
+
+test("hengende adjektiv uten etterfølgende substantiv bruker m/f-formen", () => {
+  // 3 ord i AdjektivSubstantiv: adj subst adj — siste adjektiv har ingen
+  // etterfølgende substantiv og skal stå i m/f-form selv i nøytrum-fixturen.
+  const words = generatePhrase(Pattern.AdjektivSubstantiv, 3, noytFixture).split(" ");
+  assert.ok(adjNoyt.includes(words[0]), `pos 0 not nøytrum: ${words[0]}`);
+  assert.ok(adjMf.includes(words[2]), `pos 2 not m/f: ${words[2]}`);
+});
+
+// Entropilister med kjente størrelser: adj 4 -> 2 bits, subst 8 -> 3 bits, verb 2 -> 1 bit.
+const entLists = {
+  adjektiv: Array.from({ length: 4 }, (_, i) => ({ mf: `a${i}`, noyt: `an${i}` })),
+  substantiv: Array.from({ length: 8 }, (_, i) => ({ ord: `s${i}`, kjonn: "m" })),
+  verb: ["v0", "v1"],
+};
+
+test("calcEntropyBits sums log2(pool) per position for AdjektivSubstantiv", () => {
+  // posisjon 0..3 -> adj(2)+sub(3)+adj(2)+sub(3) = 10
+  assert.equal(calcEntropyBits(Pattern.AdjektivSubstantiv, 4, entLists), 10);
+});
+
 test("calcEntropyBits for AdjektiverSubstantiv = (n-1)*log2(adj) + log2(sub)", () => {
-  // adjektiv pool 4 -> 2 bits, substantiv pool 8 -> 3 bits.
-  const lists = {
-    adjektiv: ["a", "b", "c", "d"],
-    substantiv: ["e", "f", "g", "h", "i", "j", "k", "l"],
-    verb: [],
-  };
-  // 5 words -> 4*2 + 3 = 11
-  assert.equal(calcEntropyBits(Pattern.AdjektiverSubstantiv, 5, lists), 11);
+  // 5 ord -> 4*2 + 3 = 11
+  assert.equal(calcEntropyBits(Pattern.AdjektiverSubstantiv, 5, entLists), 11);
 });
 
 test("calcEntropyBits for AdjektivSubstantivVerb sums the cycling pools", () => {
-  // adj 4 -> 2, sub 8 -> 3, verb 2 -> 1 bit.
+  // 4 ord -> adj(2)+sub(3)+verb(1)+adj(2) = 8
+  assert.equal(calcEntropyBits(Pattern.AdjektivSubstantivVerb, 4, entLists), 8);
+});
+
+test("calcEntropyBits for SubstantivVerb sums alternating pools", () => {
+  // 4 ord -> sub(3)+verb(1)+sub(3)+verb(1) = 8
+  assert.equal(calcEntropyBits(Pattern.SubstantivVerb, 4, entLists), 8);
+});
+
+test("calcEntropyBits uses the combined pool for Fritt", () => {
+  // 4 + 8 + 2 = 14 er ikke en toerpotens; bruk 4+2+2=8 -> 3 bits/ord.
   const lists = {
-    adjektiv: ["a", "b", "c", "d"],
-    substantiv: ["e", "f", "g", "h", "i", "j", "k", "l"],
-    verb: ["m", "n"],
+    adjektiv: entLists.adjektiv,
+    substantiv: entLists.substantiv.slice(0, 2),
+    verb: entLists.verb,
   };
-  // 4 words -> adj(2)+sub(3)+verb(1)+adj(2) = 8
-  assert.equal(calcEntropyBits(Pattern.AdjektivSubstantivVerb, 4, lists), 8);
+  // 5 ord -> 15
+  assert.equal(calcEntropyBits(Pattern.Fritt, 5, lists), 15);
 });
 
 test("generatePhrase throws on an unknown pattern", () => {
@@ -96,27 +174,6 @@ test("generatePhrase throws on an unknown pattern", () => {
 
 test("calcEntropyBits throws on an unknown pattern", () => {
   assert.throws(() => calcEntropyBits("bogus", 4, fixture), /Ukjent mønster/);
-});
-
-test("calcEntropyBits sums log2(pool) per position for AdjektivSubstantiv", () => {
-  // adjektiv pool 4 -> 2 bits, substantiv pool 8 -> 3 bits.
-  const lists = {
-    adjektiv: ["a", "b", "c", "d"],
-    substantiv: ["e", "f", "g", "h", "i", "j", "k", "l"],
-    verb: [],
-  };
-  // positions 0..3 -> adj(2)+sub(3)+adj(2)+sub(3) = 10
-  assert.equal(calcEntropyBits(Pattern.AdjektivSubstantiv, 4, lists), 10);
-});
-
-test("calcEntropyBits uses the combined pool for Fritt", () => {
-  // union size 8 -> 3 bits/word, 5 words -> 15
-  const lists = {
-    adjektiv: ["a", "b", "c", "d"],
-    substantiv: ["e", "f"],
-    verb: ["g", "h"],
-  };
-  assert.equal(calcEntropyBits(Pattern.Fritt, 5, lists), 15);
 });
 
 test("filterWords returns all words for an empty or whitespace query", () => {

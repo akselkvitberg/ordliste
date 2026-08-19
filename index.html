@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="nb">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ordliste – passord-fraser</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Ordliste</h1>
+        <p class="tagline">Norsk ordliste – passord-fraser og ordsøk</p>
+      </header>
+
+      <div id="error" class="error hidden" role="alert"></div>
+
+      <section class="card" id="generator">
+        <h2>Generer passord-frase</h2>
+
+        <div class="controls">
+          <label>
+            Mønster
+            <select id="pattern">
+              <option value="adjektiv-substantiv">Adjektiv + substantiv (vekselvis)</option>
+              <option value="adjektiver-substantiv">Adjektiver + ett substantiv</option>
+              <option value="adjektiv-substantiv-verb">Adjektiv + substantiv + verb</option>
+              <option value="substantiv-verb">Substantiv + verb</option>
+              <option value="fritt">Fritt (blanding av alle ordklasser)</option>
+            </select>
+          </label>
+
+          <label>
+            Antall ord
+            <input id="word-count" type="number" min="2" max="20" value="6" />
+          </label>
+
+          <button id="generate" type="button">Generer</button>
+        </div>
+
+        <output id="phrase" class="phrase" aria-live="polite"></output>
+
+        <div class="phrase-actions">
+          <button id="copy" type="button">Kopier</button>
+          <span id="copy-status" class="copy-status" aria-live="polite"></span>
+          <span id="entropy" class="entropy"></span>
+        </div>
+      </section>
+
+      <section class="card" id="browser">
+        <h2>Utforsk ordlistene</h2>
+
+        <p class="provenance">
+          Ordlistene er hentet fra Norsk Ordbank (fullformslista) og filtrert til
+          vanlige ord på 4–9 bokstaver, uten egennavn og uten ord fra svartelista.
+          Ordene er så sortert etter hvor ofte de forekommer i Språkbankens
+          N-gram-materiale (digibok-unigram, 2022), og de vanligste er valgt:
+          10 000 substantiv, 10 000 adjektiv og 5 000 verb. Kilder: Norsk Ordbank
+          (CC-BY) og N-gram (CC-BY).
+        </p>
+
+        <button id="toggle-list" type="button" aria-expanded="false">Se ordliste</button>
+
+        <div id="browser-content" class="hidden">
+          <div id="tabs" class="tabs">
+            <button class="tab" type="button" data-key="substantiv">Substantiv</button>
+            <button class="tab" type="button" data-key="adjektiv">Adjektiv</button>
+            <button class="tab" type="button" data-key="verb">Verb</button>
+          </div>
+
+          <input id="search" type="search" placeholder="Søk (delstreng) …" />
+          <p id="count" class="count"></p>
+          <div id="results" class="results"></div>
+          <p id="truncated" class="truncated"></p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

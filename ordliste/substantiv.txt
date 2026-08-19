@@ -58,7 +58,6 @@ agora	m
 agreement	n
 agronom	m
 agurk	m
-aids	m
 aino	m
 ajourhold	n
 akademi	n
@@ -67,7 +66,6 @@ akevitt	m
 akilles	m
 aking	f
 akkord	m
-akkusativ	m
 akne	m
 akryl	n
 akse	m
@@ -209,7 +207,6 @@ annuitet	m
 anode	m
 anorakk	m
 anordning	f
-anoreksi	m
 anretning	f
 anrop	n
 ansamling	f
@@ -239,7 +236,6 @@ antrekk	n
 antydning	f
 anvisning	f
 aorta	m
-apartheid	m
 apati	m
 apekatt	m
 apne	m
@@ -388,7 +384,6 @@ avgift	f
 avgivelse	m
 avgjerd	f
 avgrunn	m
-avgud	m
 avhending	f
 avhold	n
 avhør	n
@@ -515,6 +510,7 @@ bandasje	m
 bande	m
 bandy	m
 bane	m
+banesår	n
 bang	n
 banjo	m
 bank	n
@@ -657,6 +653,7 @@ beng	m
 benjamin	m
 benk	m
 bensin	m
+benvev	n
 benzen	n
 benzo	m
 benådning	f
@@ -712,9 +709,6 @@ beven	m
 bevilling	m
 bevis	n
 bevæpning	f
-bibel	m
-bibelord	n
-bibelvers	n
 bibliotek	n
 bibringe	m
 biceps	m
@@ -820,11 +814,9 @@ blindvei	m
 blink	n
 blitz	m
 blod	n
-blodbad	n
 blodkar	n
 blodpropp	m
 blodprøve	f
-blodskam	f
 blodspor	n
 blodtap	n
 blodtrykk	n
@@ -848,6 +840,7 @@ blygsel	f
 blåbær	n
 blåfarge	m
 blåklokke	f
+blåkveite	f
 blålys	n
 blåmerke	n
 blåne	m
@@ -916,7 +909,6 @@ boplass	m
 bord	n
 bordbønn	f
 bordeaux	m
-bordell	n
 borehull	n
 borg	f
 boring	f
@@ -1051,8 +1043,6 @@ bryllup	n
 bryn	n
 bryne	n
 brynje	f
-bryst	n
-brystvern	n
 bryting	f
 brytning	f
 bråk	n
@@ -1069,7 +1059,6 @@ brøl	n
 brønn	m
 brøst	n
 budbærer	m
-buddha	m
 buddhisme	m
 buddhist	m
 budeie	f
@@ -1085,7 +1074,6 @@ bukse	f
 bukt	f
 bulder	n
 bule	m
-bulimi	m
 buljong	m
 bulk	m
 bulle	m
@@ -1173,6 +1161,7 @@ bånd	n
 bånn	m
 båre	f
 båtbygger	m
+båthus	n
 båtsmann	m
 båttur	m
 bæreevne	f
@@ -1186,6 +1175,7 @@ bøhmer	m
 bøle	n
 bølge	f
 bølgedal	m
+bølgeslag	n
 bøling	m
 bølle	f
 bønn	f
@@ -1207,7 +1197,6 @@ calling	m
 camping	m
 campus	m
 cancer	m
-cannabis	m
 canyon	m
 cape	m
 cargo	m
@@ -1308,11 +1297,9 @@ dank	m
 dannelse	m
 danning	f
 dans	m
-danske	m
 dart	m
 dash	m
 dask	n
-dass	n
 data	m
 database	m
 datablad	n
@@ -1332,6 +1319,7 @@ daude	m
 deadline	m
 dean	m
 debatt	m
+debattant	m
 debet	m
 debitor	m
 debut	m
@@ -1500,8 +1488,6 @@ done	f
 donna	m
 donor	m
 dont	m
-dopamin	n
-doping	f
 dopp	m
 dose	m
 dosent	m
@@ -1519,9 +1505,6 @@ dram	m
 drama	n
 dramatikk	m
 dranker	m
-drap	n
-drapsmann	m
-drapssak	f
 drei	m
 dreiebenk	m
 dreiing	f
@@ -1529,7 +1512,6 @@ dreining	f
 dren	n
 drenering	f
 dreng	m
-drep	m
 dress	m
 dressing	m
 dressur	m
@@ -1597,6 +1579,7 @@ dundre	f
 dunk	n
 dunst	m
 duodji	m
+dupp	m
 duppe	f
 dusin	n
 dusj	m
@@ -1834,9 +1817,9 @@ erts	m
 erverv	n
 esel	n
 eskadre	m
+eskadron	m
 eske	f
 eskimo	m
-eskorte	m
 esperanto	m
 espresso	m
 esprit	m
@@ -1871,6 +1854,7 @@ ettersyn	n
 ettertid	f
 ettervern	n
 etui	n
+etylen	n
 etymologi	m
 euro	m
 europeer	m
@@ -1962,8 +1946,6 @@ farve	m
 farvel	n
 fasade	m
 fasan	m
-fascisme	m
-fascist	m
 fase	m
 fashion	m
 fasit	m
@@ -2122,6 +2104,7 @@ fjel	f
 fjell	n
 fjelland	n
 fjellbu	m
+fjellbygd	f
 fjelldal	m
 fjellheim	m
 fjellrev	m
@@ -2138,7 +2121,6 @@ fjernhet	f
 fjerning	f
 fjernsyn	n
 fjes	n
-fjols	n
 fjon	n
 fjord	m
 fjun	n
@@ -2365,6 +2347,7 @@ fortegn	n
 fortgang	m
 fortid	f
 fortielse	m
+fortom	m
 fortred	m
 fortrinn	n
 fortropp	m
@@ -2449,6 +2432,7 @@ frende	m
 fres	m
 fresing	f
 freske	m
+friareal	n
 fridag	m
 fridom	m
 frier	m
@@ -2493,6 +2477,7 @@ frukttre	n
 fryd	m
 frykt	m
 frys	m
+fryseboks	m
 frysing	f
 frysning	f
 fråde	m
@@ -2531,7 +2516,6 @@ fylking	f
 fyll	f
 fyllepenn	m
 fyllest	m
-fyllik	m
 fylling	f
 fyllmasse	m
 fynd	n
@@ -2701,6 +2685,7 @@ gevir	n
 gevær	n
 giftighet	f
 giftstoff	n
+gigant	m
 gikt	f
 gilde	n
 gilje	f
@@ -2756,6 +2741,7 @@ gjøn	n
 gjøremål	n
 gjøren	m
 gjørme	f
+glamour	m
 glans	m
 glanstid	f
 glapp	m
@@ -2776,6 +2762,7 @@ glidelås	n
 glidning	f
 glimmer	m
 glimt	n
+glip	n
 glipe	f
 glipp	m
 glis	n
@@ -2959,15 +2946,6 @@ grøss	n
 grøt	m
 guano	m
 gubbe	m
-guddom	m
-gudfar	m
-gudinne	f
-gudmor	f
-gudsbilde	n
-gudsfrykt	m
-gudshus	n
-gudsord	n
-gudstro	f
 guffe	f
 gufs	n
 guide	m
@@ -3036,7 +3014,6 @@ hald	n
 hale	m
 half	m
 halleluja	n
-hallik	m
 halling	m
 hallo	n
 halloween	m
@@ -3055,6 +3032,7 @@ halvmeter	m
 halvmåne	m
 halvmørke	n
 halvpart	m
+halvstikk	n
 halvt	m
 halvtime	m
 halvår	n
@@ -3076,7 +3054,6 @@ handel	m
 handelsby	m
 handfull	m
 handicap	n
-handikap	n
 handkle	n
 handlag	n
 handledd	n
@@ -3134,6 +3111,7 @@ havnivå	n
 havre	m
 havregryn	n
 havregrøt	m
+havremel	n
 havsnød	f
 havørn	f
 heading	m
@@ -3234,6 +3212,7 @@ herregard	m
 herregård	m
 herremann	m
 herse	m
+herskap	n
 hertug	m
 hertz	m
 hest	m
@@ -3253,6 +3232,7 @@ higen	m
 hijab	m
 hikke	m
 hikst	n
+hildring	f
 hilsen	m
 himling	f
 himmel	m
@@ -3261,14 +3241,13 @@ hind	f
 hinder	n
 hindi	m
 hindring	f
-hindu	m
-hinduisme	m
 hingst	m
 hinne	f
 hint	n
 hird	f
 hirse	m
 hiss	m
+hissighet	f
 histamin	n
 histogram	n
 historie	f
@@ -3321,7 +3300,7 @@ hole	m
 holk	m
 hollender	m
 holme	m
-holocaust	n
+holmgang	m
 holt	n
 honda	m
 honning	m
@@ -3381,7 +3360,6 @@ hovmot	n
 hovslag	n
 hubro	m
 hudfarge	m
-hudkreft	m
 hudsykdom	m
 huff	n
 hugg	n
@@ -3481,6 +3459,7 @@ hyllest	m
 hylse	f
 hylster	n
 hymne	m
+hyperbel	m
 hypnose	m
 hypotese	m
 hyppighet	f
@@ -3498,6 +3477,7 @@ håndball	m
 håndbok	f
 håndflate	f
 håndfull	m
+håndgrep	n
 håndjern	n
 håndkle	n
 håndlag	n
@@ -3549,6 +3529,7 @@ høymesse	f
 høysang	m
 høyskole	m
 høysnue	m
+høystakk	m
 høytid	f
 høytrykk	n
 høyttaler	m
@@ -3576,7 +3557,6 @@ ilke	m
 illusjon	m
 image	n
 imago	n
-imam	m
 imitasjon	m
 immigrant	m
 immunitet	m
@@ -3587,7 +3567,6 @@ importør	m
 impotens	m
 impuls	m
 incentiv	n
-incest	m
 inch	m
 indeks	m
 inder	m
@@ -3691,7 +3670,6 @@ interpret	m
 intervall	n
 intervju	n
 intet	n
-intimitet	m
 intranett	n
 intrige	m
 intro	m
@@ -3714,6 +3692,7 @@ islett	n
 isme	m
 isolasjon	m
 isolat	n
+isolator	m
 isolering	f
 isse	m
 ister	n
@@ -3813,7 +3792,6 @@ julekveld	m
 julenisse	m
 juletre	n
 juli	m
-juling	f
 jumbo	m
 jump	n
 junge	m
@@ -3851,6 +3829,7 @@ kake	f
 kakkelovn	m
 kaktus	m
 kala	m
+kalas	n
 kalender	m
 kali	n
 kaliber	n
@@ -3986,6 +3965,7 @@ kavring	m
 keeper	m
 kefir	m
 keil	m
+keim	m
 keiser	m
 kelner	m
 kelvin	m
@@ -4010,6 +3990,7 @@ kilometer	m
 kilowatt	m
 kilt	m
 kime	m
+kimono	m
 kineser	m
 kinin	n
 kinn	n
@@ -4065,7 +4046,6 @@ kjerne	m
 kjerr	n
 kjerre	f
 kjerrevei	m
-kjerring	f
 kjerte	m
 kjertel	m
 kjetter	m
@@ -4222,6 +4202,8 @@ knipetak	n
 knippe	n
 knirk	n
 knirking	f
+knis	n
+knitring	f
 kniv	m
 knivblad	n
 knivsodd	m
@@ -4258,7 +4240,6 @@ koherens	m
 kohort	m
 koie	f
 koka	m
-kokain	n
 koke	f
 kokebok	f
 kokekar	n
@@ -4316,7 +4297,6 @@ kommisjon	m
 kommissær	m
 kommode	m
 kommune	m
-kommunist	m
 komp	n
 kompani	n
 kompass	n
@@ -4384,7 +4364,6 @@ kopist	m
 kopling	f
 kopp	m
 kopra	m
-koran	m
 korde	m
 kordel	m
 koreograf	m
@@ -4397,6 +4376,7 @@ korn	n
 kornmo	m
 kornslag	n
 korntørke	f
+kornåker	m
 korp	m
 korps	n
 korpus	n
@@ -4406,6 +4386,7 @@ korrosjon	m
 kors	n
 korsang	m
 korsett	n
+korskirke	f
 korstog	n
 korsvei	m
 kortform	f
@@ -4431,6 +4412,7 @@ kott	n
 kove	m
 krabat	m
 krabbe	f
+krafse	f
 kraft	m
 kraftfelt	n
 kraftfor	n
@@ -4439,7 +4421,10 @@ krafttak	n
 kraftverk	n
 krag	m
 krage	m
+krak	n
+krake	m
 krakk	n
+krambod	m
 krampe	m
 kran	m
 krangel	m
@@ -4456,14 +4441,12 @@ kreatur	n
 kred	m
 kredit	m
 kreditor	m
-kreft	m
 krek	n
 krekling	m
 krem	m
 kremfløte	m
 kremmer	m
 kremt	n
-krenkelse	m
 kreps	m
 krepsdyr	n
 krets	m
@@ -4528,7 +4511,6 @@ krøke	n
 krøll	m
 krølle	f
 krønike	f
-krøpling	m
 krøtter	n
 kubbe	m
 kube	m
@@ -4607,6 +4589,7 @@ kvasse	f
 kvast	m
 kvede	n
 kveg	n
+kveil	m
 kvein	f
 kveite	f
 kveke	f
@@ -4615,7 +4598,6 @@ kveld	m
 kvelds	m
 kveldsmat	m
 kveldstid	f
-kvelertak	n
 kvelning	f
 kvelstoff	n
 kven	m
@@ -4656,7 +4638,6 @@ kåpe	f
 kårde	m
 kåre	m
 kåseri	n
-kåte	f
 køye	f
 laban	m
 labb	m
@@ -4698,11 +4679,13 @@ lampe	f
 land	n
 landareal	n
 landbruk	n
+landdyr	n
 landevei	m
 landgang	m
 landing	m
 landlov	m
 landmåler	m
+landnåm	n
 landsby	m
 landsdel	m
 landskamp	m
@@ -5030,6 +5013,7 @@ lovbrudd	n
 lovbud	n
 love	m
 lovgiver	m
+loving	f
 lovnad	m
 lovord	n
 lovsang	m
@@ -5047,6 +5031,7 @@ luftlag	n
 luftlinje	f
 luftning	f
 luftrom	n
+luftrør	n
 luftskip	n
 luftstrøm	m
 lufttrykk	n
@@ -5084,6 +5069,7 @@ lydhørhet	f
 lydighet	f
 lydnivå	n
 lydopptak	n
+lydskrift	f
 lydstyrke	m
 lying	f
 lykke	f
@@ -5192,6 +5178,7 @@ majones	m
 major	m
 majoritet	m
 makaroni	m
+makeup	m
 making	f
 makk	m
 makrell	m
@@ -5249,7 +5236,6 @@ marg	m
 margarin	m
 margin	m
 mari	m
-marihuana	m
 marina	m
 marinade	m
 marine	m
@@ -5285,9 +5271,9 @@ maskin	m
 maskineri	n
 maskinist	m
 maskinrom	n
-massakre	m
 massasje	m
 mast	f
+matauk	m
 matavfall	n
 matbit	m
 match	m
@@ -5467,7 +5453,6 @@ mint	m
 minus	n
 minutt	n
 mirakel	n
-misbruk	n
 misere	m
 misfoster	n
 mishag	n
@@ -5488,7 +5473,6 @@ mjødurt	f
 mjøl	n
 mjølk	f
 mjølke	m
-mobbing	f
 mobilitet	m
 modell	m
 modem	n
@@ -5517,6 +5501,7 @@ monografi	m
 monogram	n
 monolog	m
 monopol	n
+monotoni	m
 mons	m
 monsieur	m
 monster	n
@@ -5569,6 +5554,7 @@ motorbåt	m
 motordur	m
 motorikk	m
 motorsag	f
+motorskip	n
 motorveg	m
 motorvei	m
 motorvogn	f
@@ -5711,7 +5697,6 @@ nachspiel	n
 nafta	m
 nagle	m
 naivitet	m
-nakenhet	f
 nakke	m
 napp	n
 narr	m
@@ -5757,8 +5742,6 @@ nedtur	m
 negasjon	m
 negl	m
 neglelakk	m
-nekrolog	m
-nekrose	m
 nekt	m
 nektar	m
 nektelse	m
@@ -5832,6 +5815,7 @@ norm	m
 normering	f
 norn	m
 norrønt	n
+nors	m
 nostalgi	m
 nota	m
 notar	m
@@ -5929,10 +5913,12 @@ oldefar	m
 oldemor	f
 older	f
 oldermann	m
+oldfunn	n
 olding	m
 oldtid	f
 olivin	m
 olje	f
+oljefelt	n
 oljelampe	f
 oljepris	m
 oljesøl	n
@@ -6014,7 +6000,6 @@ oppheving	f
 opphold	n
 opphoping	f
 opphør	n
-oppkast	n
 oppkjøp	n
 oppkok	n
 oppkomme	n
@@ -6098,6 +6083,7 @@ orre	m
 orrfugl	m
 ortodoksi	m
 ortografi	m
+osean	n
 osman	m
 osmose	m
 oter	m
@@ -6173,6 +6159,7 @@ pang	n
 panikk	m
 panne	f
 pannekake	f
+pannelugg	m
 panorama	n
 panser	n
 pant	n
@@ -6423,7 +6410,6 @@ poetikk	m
 pointer	m
 pokal	m
 poker	m
-pokker	m
 polaris	m
 polaritet	m
 pole	m
@@ -6581,7 +6567,6 @@ prosessor	m
 prosjekt	n
 prospekt	n
 prost	m
-prostata	m
 protein	n
 protese	m
 protest	m
@@ -6607,8 +6592,6 @@ psykiater	m
 psykiatri	m
 psykolog	m
 psykologi	m
-psykopat	m
-psykopati	m
 psykose	m
 pubertet	m
 publikum	n
@@ -6699,7 +6682,6 @@ rabalder	n
 rabarbra	m
 rabatt	m
 rabbi	m
-rabbiner	m
 rabies	m
 race	n
 racer	m
@@ -6789,6 +6771,7 @@ refleks	m
 reflektor	m
 reform	m
 refreng	n
+refs	m
 refselse	m
 refusjon	m
 regatta	m
@@ -6907,6 +6890,7 @@ ressurs	m
 rest	m
 restskatt	m
 restverdi	m
+resultant	m
 resultat	n
 retina	m
 retning	f
@@ -7116,6 +7100,7 @@ rødløk	m
 rødme	m
 rødrev	m
 rødspette	f
+rødstrupe	m
 rødt	n
 rødtopp	m
 rødvin	m
@@ -7314,6 +7299,7 @@ seilbåt	m
 seilduk	m
 seiling	f
 seilskip	n
+seilskute	f
 seiltur	m
 sekel	n
 sekk	m
@@ -7447,7 +7433,6 @@ signet	n
 signing	f
 signora	m
 signore	m
-sigøyner	m
 sikkel	n
 sikkerhet	f
 sikle	f
@@ -7567,6 +7552,7 @@ skandale	m
 skanse	m
 skap	n
 skapelse	m
+skaping	f
 skapning	m
 skar	n
 skare	m
@@ -7598,6 +7584,7 @@ skiing	f
 skikk	m
 skikkelse	m
 skiklubb	m
+skikrets	m
 skildring	f
 skill	n
 skille	n
@@ -7687,6 +7674,7 @@ skolegang	m
 skolegutt	m
 skolegård	m
 skolehus	n
+skolelov	m
 skolemann	m
 skolenivå	n
 skolepike	f
@@ -7810,9 +7798,6 @@ slagskip	n
 slagsmål	n
 slagverk	n
 slagvolum	n
-slakt	n
-slakteri	n
-slakting	f
 slalåm	m
 slam	n
 slang	m
@@ -7857,6 +7842,7 @@ slukt	m
 slum	m
 slummer	m
 slump	m
+slupp	m
 slurk	m
 slurv	n
 sluse	f
@@ -7927,6 +7913,7 @@ smågutt	m
 småhus	n
 småjente	f
 småkryp	n
+smålighet	f
 småpike	f
 småprat	n
 småsild	f
@@ -8080,6 +8067,7 @@ spetakkel	n
 spett	n
 spidd	n
 spil	n
+spile	f
 spill	n
 spillerom	n
 spilletid	f
@@ -8161,6 +8149,7 @@ spytt	n
 spådom	m
 spøk	m
 spøkelse	n
+spørreord	n
 spørring	f
 spørsmål	n
 squash	m
@@ -8227,6 +8216,7 @@ steam	m
 stearin	m
 stebarn	n
 sted	n
+stedatter	f
 stedsnavn	n
 stefar	m
 steg	n
@@ -8362,6 +8352,7 @@ stropp	m
 struktur	m
 struma	m
 strupe	m
+strupetak	n
 struts	m
 stry	n
 stryk	n
@@ -8421,8 +8412,8 @@ ståsted	n
 stær	m
 støkk	m
 stønad	m
-stønn	n
 støp	n
+støpegods	n
 støpejern	n
 støperi	n
 støping	f
@@ -8463,6 +8454,7 @@ supermann	m
 suppe	f
 suppleant	m
 support	m
+sura	m
 surdeig	m
 sure	m
 surfor	n
@@ -8474,6 +8466,8 @@ surring	f
 surrogat	n
 surstoff	n
 sushi	m
+susing	f
+suvenir	m
 svaberg	n
 svakhet	f
 svale	f
@@ -8493,7 +8487,6 @@ svekling	m
 svelg	n
 svelging	f
 svenn	m
-svenske	m
 sver	m
 sverd	n
 sverm	m
@@ -8534,7 +8527,6 @@ sydside	f
 sydvest	m
 sydøst	m
 syerske	f
-syfilis	m
 sykdom	m
 syke	m
 sykebesøk	n
@@ -8569,6 +8561,7 @@ syndrom	n
 synk	m
 synlighet	f
 synode	m
+synopsis	m
 synsfelt	n
 synspunkt	n
 synsvidde	f
@@ -8722,7 +8715,6 @@ tartar	m
 tass	m
 tast	m
 tastatur	n
-tater	m
 taubane	m
 taushet	f
 tauverk	n
@@ -8947,6 +8939,7 @@ tolk	m
 tolking	f
 tolkning	f
 toll	m
+tolle	m
 tollekniv	m
 tollsted	n
 tollunion	m
@@ -8960,6 +8953,7 @@ tommel	m
 tomrom	n
 toms	n
 tomt	f
+tomte	m
 tone	m
 toneart	f
 tonefall	n
@@ -9120,6 +9114,7 @@ trump	m
 truse	f
 trussel	m
 trust	m
+trut	m
 trutmunn	m
 trygd	f
 trygghet	f
@@ -9307,6 +9302,7 @@ underlag	n
 underliv	n
 underpris	m
 underside	f
+underskog	m
 underslag	n
 undersått	m
 undertone	m
@@ -9360,6 +9356,7 @@ utdata	m
 utdeling	f
 utdyping	f
 utdypning	f
+uteareal	n
 utedo	n
 uteliv	n
 uterus	m
@@ -9383,6 +9380,7 @@ utgraving	f
 utgreiing	f
 utheving	f
 uthus	n
+uting	m
 utjamning	f
 utjevning	f
 utkant	m
@@ -9453,7 +9451,6 @@ uttrekk	n
 uttrykk	n
 uttørking	f
 uttørring	f
-utukt	f
 utvalg	n
 utvasking	f
 utveg	m
@@ -9501,6 +9498,7 @@ valgspråk	n
 validitet	m
 valium	n
 valle	m
+valmue	m
 valnøtt	f
 valp	m
 vals	m
@@ -9520,6 +9518,7 @@ vann	n
 vannbad	n
 vanndamp	m
 vannfall	n
+vannflate	f
 vannglass	n
 vannhull	n
 vanning	f
@@ -9569,6 +9568,7 @@ varsku	n
 varsling	f
 varsomhet	f
 varulv	m
+vasall	m
 vase	m
 vaselin	m
 vask	m
@@ -9707,6 +9707,7 @@ vidd	n
 vidde	f
 video	m
 videogram	n
+vidje	f
 vidsyn	n
 vidunder	n
 vielse	m
@@ -9721,12 +9722,14 @@ vikariat	n
 vikeplikt	f
 viking	m
 vikingtid	f
+vikke	f
 vikling	f
 viktighet	f
 vilje	m
 vilkår	n
 villa	m
 villaks	m
+villand	f
 villdyr	n
 ville	f
 villelse	m
@@ -9846,7 +9849,6 @@ vræl	n
 vrøvl	n
 vugge	f
 vulkan	m
-vulva	m
 vurdering	f
 våde	m
 våkenhet	f
@@ -9857,9 +9859,6 @@ våpenbruk	n
 våpenmakt	f
 vårdag	m
 vårsol	f
-våtmark	f
-våtrom	n
-våtvekt	f
 være	n
 værelse	n
 væremåte	m
@@ -9969,6 +9968,7 @@ zulu	m
 økonom	m
 økonomi	m
 økosystem	n
+ølglass	n
 ømhet	f
 ønske	n
 ønskemål	n

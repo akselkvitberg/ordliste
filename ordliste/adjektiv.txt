@@ -39,7 +39,6 @@ agnatisk	agnatisk
 agnostisk	agnostisk
 agrar	agrart
 agrarisk	agrarisk
-aidssyk	aidssykt
 akademisk	akademisk
 akkadisk	akkadisk
 akrostisk	akrostisk
@@ -192,6 +191,7 @@ arisk	arisk
 arkadisk	arkadisk
 arkaisk	arkaisk
 arktisk	arktisk
+armlaus	armlaust
 armløs	armløst
 armodslig	armodslig
 aromatisk	aromatisk
@@ -219,6 +219,7 @@ askefast	askefast
 askegrå	askegrått
 asketisk	asketisk
 asomatisk	asomatisk
+asorisk	asorisk
 asosial	asosialt
 assyrisk	assyrisk
 astenisk	astenisk
@@ -406,6 +407,7 @@ barhoda	barhoda
 barhodet	barhodet
 barka	barka
 barket	barket
+barlegga	barlegga
 barlegget	barlegget
 barmfager	barmfagert
 barnaktig	barnaktig
@@ -485,6 +487,7 @@ beinsom	beinsomt
 beintfram	beintfram
 beintfrem	beintfrem
 beintøff	beintøft
+beisefast	beisefast
 beisk	beiskt
 bekjent	bekjent
 beklemt	beklemt
@@ -588,9 +591,6 @@ beånda	beånda
 beåndet	beåndet
 bhutansk	bhutansk
 biafransk	biafransk
-bibellærd	bibellærd
-bibelsk	bibelsk
-bibeltro	bibeltro
 bibliofil	bibliofilt
 biblioman	bibliomant
 bidig	bidig
@@ -669,6 +669,7 @@ blekfet	blekfett
 blekgul	blekgult
 blekket	blekket
 blekkete	blekkete
+bleknebba	bleknebba
 blekrosa	blekrosa
 blekrød	blekrødt
 blemmet	blemmet
@@ -693,7 +694,6 @@ blodløs	blodløst
 blodrik	blodrikt
 blodrød	blodrødt
 blodskutt	blodskutt
-blodsugen	blodsugent
 blommet	blommet
 blommete	blommete
 blomstret	blomstret
@@ -815,6 +815,7 @@ breibeint	breibeint
 breibent	breibent
 breibygd	breibygd
 breikinna	breikinna
+breirygga	breirygga
 breispora	breispora
 breivokst	breivokst
 brennbar	brennbart
@@ -828,6 +829,7 @@ brennkald	brennkaldt
 brennrød	brennrødt
 brennsnar	brennsnart
 brennvarm	brennvarmt
+brestlaus	brestlaust
 bretagnsk	bretagnsk
 bretonsk	bretonsk
 brevlig	brevlig
@@ -842,6 +844,7 @@ brodden	broddent
 broderlig	broderlig
 broket	broket
 brokete	brokete
+brokksyk	brokksykt
 bronkial	bronkialt
 brudden	bruddent
 bruddfast	bruddfast
@@ -909,7 +912,6 @@ buktete	buktete
 bulet	bulet
 bulete	bulete
 bulgarsk	bulgarsk
-bulimisk	bulimisk
 bulket	bulket
 bulkete	bulkete
 bumset	bumset
@@ -1137,7 +1139,6 @@ dogget	dogget
 doggete	doggete
 doggfri	doggfritt
 doggfrisk	doggfriskt
-doggvåt	doggvått
 dogmatisk	dogmatisk
 doktrinær	doktrinært
 dominant	dominant
@@ -1151,7 +1152,6 @@ drabelig	drabelig
 dradd	dradd
 drakonisk	drakonisk
 dramatisk	dramatisk
-drapsdømt	drapsdømt
 drastisk	drastisk
 dratt	dratt
 dravidisk	dravidisk
@@ -1169,7 +1169,6 @@ drivende	drivende
 drivendes	drivendes
 drivhvit	drivhvitt
 drivkvit	drivkvitt
-drivvåt	drivvått
 droplet	droplet
 droplete	droplete
 drukken	drukkent
@@ -1178,7 +1177,6 @@ drustelig	drustelig
 dryg	drygt
 dryppefri	dryppefritt
 dryppfri	dryppfritt
-dryppvåt	dryppvått
 drømmeløs	drømmeløst
 drømmende	drømmende
 drøy	drøyt
@@ -1193,7 +1191,6 @@ dugget	dugget
 duggete	duggete
 duggfri	duggfritt
 duggfrisk	duggfriskt
-duggvåt	duggvått
 dugløs	dugløst
 dukknakka	dukknakka
 duknakka	duknakka
@@ -1246,7 +1243,6 @@ dyrisk	dyrisk
 dyrkbar	dyrkbart
 dyspneisk	dyspneisk
 dystopisk	dystopisk
-dyvåt	dyvått
 dådlaus	dådlaust
 dådløs	dådløst
 dådrik	dådrikt
@@ -1315,6 +1311,7 @@ einkom	einkom
 einslig	einslig
 eiret	eiret
 eirete	eirete
+eirgrønn	eirgrønt
 ekkel	ekkelt
 eklatant	eklatant
 eklektisk	eklektisk
@@ -1477,7 +1474,6 @@ eritreisk	eritreisk
 erklært	erklært
 ermeløs	ermeløst
 erogen	erogent
-erotisk	erotisk
 erotoman	erotomant
 erten	ertent
 ertet	ertet
@@ -1629,15 +1625,19 @@ feilfri	feilfritt
 feilslått	feilslått
 feilstilt	feilstilt
 feit	feitt
+feitladen	feitladent
+feitlaten	feitlatent
 fellende	fellende
 felles	felles
 felleseid	felleseid
+femblada	femblada
 fembladet	fembladet
 femdels	femdels
 femdelt	femdelt
 femdobbel	femdobbelt
 femfota	femfota
 femfotet	femfotet
+femføtt	femføtt
 feminin	feminint
 femkanta	femkanta
 femkantet	femkantet
@@ -1645,6 +1645,7 @@ femliters	femliters
 femmastet	femmastet
 fempunkts	fempunkts
 femroms	femroms
+femsida	femsida
 femsiders	femsiders
 femsidet	femsidet
 femsifra	femsifra
@@ -1754,9 +1755,11 @@ firefelts	firefelts
 firefota	firefota
 firefotet	firefotet
 firefots	firefots
+fireføtt	fireføtt
 firehjuls	firehjuls
 firelinja	firelinja
 firemanns	firemanns
+firemasta	firemasta
 fireroms	fireroms
 firesida	firesida
 firesidet	firesidet
@@ -1855,6 +1858,7 @@ flengende	flengende
 flerarmet	flerarmet
 flerbo	flerbo
 flerbu	flerbu
+flerbølt	flerbølt
 flercella	flercella
 flerdelt	flerdelt
 flerfarga	flerfarga
@@ -1891,6 +1895,7 @@ flokete	flokete
 flokset	flokset
 floksete	floksete
 flomdiger	flomdigert
+flomherja	flomherja
 flomstor	flomstort
 florisant	florisant
 florlett	florlett
@@ -1941,8 +1946,6 @@ fonemisk	fonemisk
 fonetisk	fonetisk
 fonnet	fonnet
 fonnete	fonnete
-forbanna	forbanna
-forbannet	forbannet
 forbarka	forbarka
 forbarket	forbarket
 forbaska	forbaska
@@ -1959,6 +1962,7 @@ forbuden	forbudent
 forbudt	forbudt
 fordekt	fordekt
 fordektig	fordektig
+fordelbar	fordelbart
 forderva	forderva
 fordervet	fordervet
 fordrømt	fordrømt
@@ -2011,7 +2015,6 @@ forjagd	forjagd
 forjaget	forjaget
 forjetta	forjetta
 forjettet	forjettet
-forjævlig	forjævlig
 forkava	forkava
 forkavd	forkavd
 forkavet	forkavet
@@ -2170,6 +2173,7 @@ frankoman	frankomant
 fransk	fransk
 franskeid	franskeid
 frappant	frappant
+fraregna	fraregna
 fraregnet	fraregnet
 frasefylt	frasefylt
 fraskilt	fraskilt
@@ -2443,6 +2447,7 @@ gjestfri	gjestfritt
 gjestmild	gjestmildt
 gjev	gjevt
 gjølet	gjølet
+gjølete	gjølete
 gjørlig	gjørlig
 gjørmet	gjørmet
 gjørmete	gjørmete
@@ -2502,6 +2507,7 @@ gnien	gnient
 gniken	gnikent
 gnomisk	gnomisk
 gnostisk	gnostisk
+gnudret	gnudret
 gnudrete	gnudrete
 goanesisk	goanesisk
 godarta	godarta
@@ -2662,15 +2668,6 @@ grøten	grøtent
 grøtet	grøtet
 grøtete	grøtete
 grøvst	grøvst
-gudbenåda	gudbenåda
-gudelig	gudelig
-gudesendt	gudesendt
-gudgitt	gudgitt
-gudlaus	gudlaust
-gudløs	gudløst
-gudsendt	gudsendt
-gudsens	gudsens
-gudskapt	gudskapt
 guffen	guffent
 guineansk	guineansk
 gulaktig	gulaktig
@@ -2690,6 +2687,7 @@ gullfarga	gullfarga
 gullgul	gullgult
 gullig	gullig
 gullkanta	gullkanta
+gullpryda	gullpryda
 gullslått	gullslått
 gulmalt	gulmalt
 gulmoden	gulmodent
@@ -2767,14 +2765,12 @@ halvmatt	halvmatt
 halvmett	halvmett
 halvmoden	halvmodent
 halvmørk	halvmørkt
-halvnaken	halvnakent
 halvnær	halvnært
 halvredd	halvredd
 halvrund	halvrundt
 halvskadd	halvskadd
 halvspilt	halvspilt
 halvspist	halvspist
-halvstiv	halvstivt
 halvstor	halvstort
 halvsøt	halvsøtt
 halvtom	halvtomt
@@ -2849,6 +2845,7 @@ hauget	hauget
 haugete	haugete
 haugiansk	haugiansk
 hauket	hauket
+haukete	haukete
 havende	havende
 havendes	havendes
 havesjuk	havesjukt
@@ -2911,6 +2908,8 @@ helgefri	helgefritt
 helhetlig	helhetlig
 helhjerta	helhjerta
 helhvit	helhvitt
+helkort	helkort
+helkvit	helkvitt
 hellelagt	hellelagt
 hellensk	hellensk
 hellig	hellig
@@ -2922,7 +2921,6 @@ helselaus	helselaust
 helseløs	helseløst
 helsesvak	helsesvakt
 helsides	helsides
-helsikes	helsikes
 helskinna	helskinna
 helskåren	helskåret
 helskåret	helskåret
@@ -2981,10 +2979,6 @@ heslig	heslig
 hestedum	hestedumt
 hestegal	hestegalt
 hestevant	hestevant
-heterofil	heterofilt
-heterogam	heterogamt
-heterogen	heterogent
-heterolog	heterologt
 hevbar	hevbart
 hieratisk	hieratisk
 himla	himla
@@ -2994,7 +2988,6 @@ himmelhøg	himmelhøgt
 himmelhøy	himmelhøyt
 himmelsk	himmelsk
 himmelvid	himmelvidt
-hinduisk	hinduisk
 hinnet	hinnet
 hinnete	hinnete
 hinsidig	hinsidig
@@ -3121,6 +3114,7 @@ hvilelaus	hvilelaust
 hvileløs	hvileløst
 hvit	hvitt
 hvitaktig	hvitaktig
+hvitbleik	hvitbleikt
 hvitblek	hvitblekt
 hvitgrønn	hvitgrønt
 hvitgul	hvitgult
@@ -3155,6 +3149,7 @@ håndholdt	håndholdt
 håndlaga	håndlaga
 håndlagd	håndlagd
 håndlaget	håndlaget
+håndnerva	håndnerva
 håndrevet	håndrevet
 håndsydd	håndsydd
 håndvarm	håndvarmt
@@ -3180,6 +3175,8 @@ høgbygd	høgbygd
 høgbåren	høgbårent
 høggravid	høggravid
 høghalsa	høghalsa
+høghalset	høghalset
+høghælt	høghælt
 høglegert	høglegert
 høglofta	høglofta
 høgloftet	høgloftet
@@ -3201,6 +3198,7 @@ høgskafta	høgskafta
 høgspent	høgspent
 høgstemt	høgstemt
 høgtlønna	høgtlønna
+høgtlønt	høgtlønt
 høgtysk	høgtysk
 høgverdig	høgverdig
 høgvokst	høgvokst
@@ -3241,6 +3239,7 @@ høyrygget	høyrygget
 høyrød	høyrødt
 høyrøsta	høyrøsta
 høyrøstet	høyrøstet
+høysinna	høysinna
 høysinnet	høysinnet
 høyskafta	høyskafta
 høyspent	høyspent
@@ -3319,7 +3318,6 @@ impotent	impotent
 impulsiv	impulsivt
 inadekvat	inadekvat
 inaktiv	inaktivt
-incestuøs	incestuøst
 inderlig	inderlig
 indie	indie
 indignert	indignert
@@ -3431,6 +3429,7 @@ innrisset	innrisset
 innrøkt	innrøkt
 innrøyket	innrøyket
 innrøykt	innrøykt
+innsalva	innsalva
 innsalvet	innsalvet
 innsatt	innsatt
 innsausa	innsausa
@@ -3451,6 +3450,7 @@ innsvøpt	innsvøpt
 innsydd	innsydd
 innsåpa	innsåpa
 innsåpet	innsåpet
+innsåpt	innsåpt
 inntatt	inntatt
 inntauet	inntauet
 inntjent	inntjent
@@ -3480,7 +3480,6 @@ intens	intenst
 intensiv	intensivt
 interiør	interiørt
 intern	internt
-intim	intimt
 intrigant	intrigant
 intrikat	intrikat
 introvert	introvert
@@ -3551,6 +3550,7 @@ jamgammal	jamgammalt
 jamgammel	jamgammelt
 jamgod	jamgodt
 jamhøg	jamhøgt
+jamhøy	jamhøyt
 jamlang	jamlangt
 jamlik	jamlikt
 jammerlig	jammerlig
@@ -3574,6 +3574,7 @@ jernhard	jernhardt
 jetdrevet	jetdrevet
 jettestor	jettestort
 jevn	jevnt
+jevnaldra	jevnaldra
 jevnbred	jevnbredt
 jevngod	jevngodt
 jevnhøg	jevnhøgt
@@ -3624,8 +3625,6 @@ jålete	jålete
 jækla	jækla
 jæklig	jæklig
 jærsk	jærsk
-jævli	jævli
-jævlig	jævlig
 kabylsk	kabylsk
 kaffebrun	kaffebrunt
 kafkask	kafkask
@@ -3846,7 +3845,6 @@ klissbløt	klissbløtt
 klissen	klissent
 klisset	klisset
 klissete	klissete
-klissvåt	klissvått
 klok	klokt
 klokkeren	klokkerent
 klomset	klomset
@@ -3930,7 +3928,6 @@ knipen	knipent
 knipsam	knipsamt
 knipsk	knipsk
 knirkefri	knirkefritt
-knivdrept	knivdrept
 knivskarp	knivskarpt
 knockout	knockout
 knoket	knoket
@@ -4058,6 +4055,7 @@ kortbølga	kortbølga
 korterma	korterma
 kortermet	kortermet
 kortfatta	kortfatta
+korthalsa	korthalsa
 korthodet	korthodet
 korthogd	korthogd
 korthugd	korthugd
@@ -4105,12 +4103,11 @@ kravløs	kravløst
 kravstor	kravstort
 kreativ	kreativt
 kredibel	kredibelt
-kreftsjuk	kreftsjukt
-kreftsyk	kreftsykt
 kremaktig	kremaktig
 kremfarga	kremfarga
 kremgul	kremgult
 kremhvit	kremhvitt
+kremkvit	kremkvitt
 kreolsk	kreolsk
 krepp	krept
 kreppen	kreppent
@@ -4126,7 +4123,6 @@ krimsjuk	krimsjukt
 kring	kringt
 krisearta	krisearta
 kristelig	kristelig
-kristen	kristent
 kritisk	kritisk
 kritthvit	kritthvitt
 krittkvit	krittkvitt
@@ -4215,6 +4211,7 @@ kurdisk	kurdisk
 kuriøs	kuriøst
 kurlandsk	kurlandsk
 kurlet	kurlet
+kurlete	kurlete
 kurr	kurt
 kursiv	kursivt
 kursorisk	kursorisk
@@ -4244,7 +4241,6 @@ kvat	kvatt
 kveiset	kveiset
 kveisete	kveisete
 kvekken	kvekkent
-kvelende	kvelende
 kvell	kvelt
 kvelven	kvelvent
 kvensk	kvensk
@@ -4286,6 +4282,7 @@ kystnær	kystnært
 kåren	kårent
 kølet	kølet
 kølete	kølete
+kølmørk	kølmørkt
 laber	labert
 labial	labialt
 labil	labilt
@@ -4327,6 +4324,7 @@ langgrunn	langgrunt
 langhalsa	langhalsa
 langhåra	langhåra
 langhåret	langhåret
+langkorna	langkorna
 langlemma	langlemma
 langlig	langlig
 langliva	langliva
@@ -4381,6 +4379,7 @@ lavlønt	lavlønt
 lavmælt	lavmælt
 lavpanna	lavpanna
 lavpannet	lavpannet
+lavsinna	lavsinna
 lavsinnet	lavsinnet
 lavspent	lavspent
 lavtlønna	lavtlønna
@@ -4392,6 +4391,7 @@ lebendig	lebendig
 leddelt	leddelt
 leddet	leddet
 leddete	leddete
+leddlaus	leddlaust
 leddløs	leddløst
 leddvis	leddvis
 ledig	ledig
@@ -4515,6 +4515,7 @@ lindrig	lindrig
 lineal	linealt
 lineær	lineært
 linfakset	linfakset
+linfarga	linfarga
 linfarget	linfarget
 linjedelt	linjedelt
 links	links
@@ -4584,6 +4585,7 @@ lovpålagt	lovpålagt
 lubben	lubbent
 luftbåren	luftbåret
 luftbåret	luftbåret
+luftforma	luftforma
 luftig	luftig
 luftkjølt	luftkjølt
 luftsjuk	luftsjukt
@@ -4676,6 +4678,7 @@ lysskjær	lysskjært
 lyssky	lyssky
 lyssterk	lyssterkt
 lyssvak	lyssvakt
+lysvak	lysvakt
 lysvåken	lysvåkent
 lytefri	lytefritt
 lytelaus	lytelaust
@@ -4686,6 +4689,7 @@ låglendt	låglendt
 låglofta	låglofta
 lågloftet	lågloftet
 låglønna	låglønna
+låglønnet	låglønnet
 låglønt	låglønt
 lågmælt	lågmælt
 lågpanna	lågpanna
@@ -4779,6 +4783,7 @@ manerlig	manerlig
 mangbølt	mangbølt
 mangearta	mangearta
 mangehoda	mangehoda
+mangesida	mangesida
 mangeårig	mangeårig
 manierert	manierert
 maniert	maniert
@@ -4848,6 +4853,7 @@ medveten	medvetent
 medviten	medvitent
 megaloman	megalomant
 meinlaus	meinlaust
+meinløs	meinløst
 meinslig	meinslig
 mekanisk	mekanisk
 mektig	mektig
@@ -4999,6 +5005,7 @@ moteprega	moteprega
 motfallen	motfallent
 motgående	motgående
 motivisk	motivisk
+motivrik	motivrikt
 motlaus	motlaust
 motløs	motløst
 motorisk	motorisk
@@ -5093,8 +5100,6 @@ møysom	møysomt
 nagelfast	nagelfast
 naglefast	naglefast
 naiv	naivt
-naken	nakent
-nakenfrøa	nakenfrøa
 namdalsk	namdalsk
 namibisk	namibisk
 narraktig	narraktig
@@ -5107,6 +5112,7 @@ natal	natalt
 nattaktiv	nattaktivt
 nattblind	nattblindt
 nattemørk	nattemørkt
+nattevåkt	nattevåkt
 nattlig	nattlig
 nattsort	nattsort
 nattsvart	nattsvart
@@ -5140,8 +5146,6 @@ nedbørrik	nedbørrikt
 nedbøyd	nedbøyd
 neddempa	neddempa
 neddempet	neddempet
-neddopa	neddopa
-neddopet	neddopet
 neddykka	neddykka
 neddykket	neddykket
 neddynga	neddynga
@@ -5178,7 +5182,6 @@ nedsarvet	nedsarvet
 nedsenka	nedsenka
 nedsenket	nedsenket
 nedskutt	nedskutt
-nedslakta	nedslakta
 nedslitt	nedslitt
 nedslått	nedslått
 nedsnødd	nedsnødd
@@ -5197,8 +5200,8 @@ nedtynga	nedtynga
 nedtynget	nedtynget
 negativ	negativt
 negroid	negroid
-nekrofil	nekrofilt
 nennsom	nennsomt
+neonfarga	neonfarga
 nepalsk	nepalsk
 nepen	nepent
 nepotisk	nepotisk
@@ -5348,6 +5351,7 @@ nylagd	nylagd
 nylaget	nylaget
 nylagt	nylagt
 nylakkert	nylakkert
+nyleid	nyleid
 nyliberal	nyliberalt
 nylig	nylig
 nymalt	nymalt
@@ -5579,6 +5583,7 @@ oppflaska	oppflaska
 oppflisa	oppflisa
 oppfliset	oppfliset
 oppflist	oppflist
+oppflossa	oppflossa
 oppgitt	oppgitt
 oppgjort	oppgjort
 oppglødd	oppglødd
@@ -5620,6 +5625,7 @@ opplandsk	opplandsk
 opplasta	opplasta
 opplastet	opplastet
 opplatt	opplatt
+opplessa	opplessa
 opplesset	opplesset
 opplesst	opplesst
 opplest	opplest
@@ -5679,6 +5685,7 @@ oppspist	oppspist
 oppstabla	oppstabla
 oppstaka	oppstaka
 oppstaket	oppstaket
+oppstakt	oppstakt
 oppstalla	oppstalla
 oppstasa	oppstasa
 oppstaset	oppstaset
@@ -5718,7 +5725,6 @@ ordinær	ordinært
 ordknapp	ordknapt
 ordlaus	ordlaust
 ordløs	ordløst
-ordrapp	ordrapt
 ordrett	ordrett
 ordrik	ordrikt
 organisk	organisk
@@ -5753,6 +5759,7 @@ overhørig	overhørig
 overilet	overilet
 overilt	overilt
 overivrig	overivrig
+overkipt	overkipt
 overlagt	overlagt
 overlegen	overlegent
 overlessa	overlessa
@@ -5775,6 +5782,7 @@ overtrent	overtrent
 overtrett	overtrett
 overtrøtt	overtrøtt
 overårig	overårig
+ovnsfersk	ovnsferskt
 ovnsstekt	ovnsstekt
 ovstor	ovstort
 paddeflat	paddeflatt
@@ -5927,7 +5935,6 @@ pløset	pløset
 pløsete	pløsete
 poengløs	poengløst
 poetisk	poetisk
-pokkers	pokkers
 polar	polart
 polaroid	polaroid
 polemisk	polemisk
@@ -6089,6 +6096,7 @@ påklistra	påklistra
 påkrevd	påkrevd
 påkrevet	påkrevet
 pålands	pålands
+pålessa	pålessa
 pålesset	pålesset
 pålesst	pålesst
 pålimt	pålimt
@@ -6127,7 +6135,6 @@ pønal	pønalt
 qatarsk	qatarsk
 rabbet	rabbet
 rabbete	rabbete
-rabbinsk	rabbinsk
 rabiat	rabiat
 rabid	rabid
 rabiesfri	rabiesfritt
@@ -6206,12 +6213,12 @@ regnfull	regnfullt
 regnfylt	regnfylt
 regngrå	regngrått
 regntung	regntungt
-regnvåt	regnvått
 regressiv	regressivt
 regulær	regulært
 rein	reint
 reinhekla	reinhekla
 reinhårig	reinhårig
+reinlinja	reinlinja
 reinslig	reinslig
 reiseglad	reiseglad
 reiseklar	reiseklart
@@ -6369,12 +6376,14 @@ rwandisk	rwandisk
 ryddig	ryddig
 ryen	ryent
 ryggesløs	ryggesløst
+ryggskada	ryggskada
 rykket	rykket
 rykkete	rykkete
 rykkvis	rykkvis
 rynket	rynket
 rynkete	rynkete
 rystende	rystende
+rytmeglad	rytmeglad
 rytmisk	rytmisk
 råbarka	råbarka
 råbarket	råbarket
@@ -6523,7 +6532,6 @@ savoiisk	savoiisk
 scenarisk	scenarisk
 scenevant	scenevant
 scenisk	scenisk
-schizoid	schizoid
 schwabisk	schwabisk
 sedat	sedat
 sedativ	sedativt
@@ -6600,9 +6608,9 @@ selvtrygg	selvtrygt
 selvvalgt	selvvalgt
 semantisk	semantisk
 semi	semi
-semittisk	semittisk
 semmer	semmert
 senantikk	senantikt
+senbær	senbært
 senesterk	senesterkt
 senet	senet
 senete	senete
@@ -6656,7 +6664,6 @@ silkefin	silkefint
 silkemjuk	silkemjukt
 silkemyk	silkemykt
 silurisk	silurisk
-silvåt	silvått
 simpel	simpelt
 simultan	simultant
 sindig	sindig
@@ -6667,7 +6674,6 @@ sinna	sinna
 sinnrik	sinnrikt
 sinnssjuk	sinnssjukt
 sinnssvak	sinnssvakt
-sinnssyk	sinnssykt
 sint	sint
 sipet	sipet
 sipete	sipete
@@ -6679,7 +6685,6 @@ sist	sist
 sistnevnt	sistnevnt
 situert	situert
 sivil	sivilt
-sivåt	sivått
 sixtinsk	sixtinsk
 sjaber	sjabert
 sjalu	sjalu
@@ -6739,6 +6744,7 @@ sjølbyrg	sjølbyrgt
 sjøldaud	sjøldaudt
 sjølgjort	sjølgjort
 sjølgod	sjølgodt
+sjølklar	sjølklart
 sjølklok	sjølklokt
 sjøllaga	sjøllaga
 sjøllagd	sjøllagd
@@ -6804,8 +6810,6 @@ skattfri	skattfritt
 skauredd	skauredd
 skavlet	skavlet
 skavlete	skavlete
-skeiv	skeivt
-skeivøyd	skeivøyd
 skeptisk	skeptisk
 skifrelst	skifrelst
 skifret	skifret
@@ -6899,6 +6903,7 @@ skrå	skrått
 skråstilt	skråstilt
 skrøpelig	skrøpelig
 skuddfri	skuddfritt
+skuddglad	skuddglad
 skuddklar	skuddklart
 skuddredd	skuddredd
 skuggredd	skuggredd
@@ -6909,7 +6914,6 @@ skumhvit	skumhvitt
 skumkvit	skumkvitt
 skummel	skummelt
 skumsvett	skumsvett
-skumvåt	skumvått
 skurret	skurret
 skurrete	skurrete
 skurvet	skurvet
@@ -6954,13 +6958,14 @@ slagen	slagent
 slagfast	slagfast
 slagramma	slagramma
 slags	slags
-slak	slakt
-slakk	slakt
+slak	slak
+slakk	slakk
 slammet	slammet
 slammete	slammete
 slampet	slampet
 slampete	slampete
 slamret	slamret
+slamrete	slamrete
 slamset	slamset
 slamsete	slamsete
 slangeløs	slangeløst
@@ -6979,9 +6984,6 @@ slaskete	slaskete
 slavisk	slavisk
 slavofil	slavofilt
 slavonsk	slavonsk
-sleiken	sleikent
-sleiket	sleiket
-sleikete	sleikete
 sleip	sleipt
 sleivet	sleivet
 sleivete	sleivete
@@ -7255,7 +7257,6 @@ spandabel	spandabelt
 spansk	spansk
 sparsom	sparsomt
 spartansk	spartansk
-spastisk	spastisk
 spatial	spatialt
 spebygd	spebygd
 sped	spedt
@@ -7275,7 +7276,6 @@ spettete	spettete
 spillbar	spillbart
 spillefri	spillefritt
 spillegal	spillegalt
-spillekåt	spillekåt
 spinal	spinalt
 spinkel	spinkelt
 spinngal	spinngalt
@@ -7465,6 +7465,7 @@ striøyd	striøyd
 strofisk	strofisk
 strykefri	strykefritt
 strøken	strøkent
+strømlaus	strømlaust
 strømløs	strømløst
 stubbet	stubbet
 stubbete	stubbete
@@ -7528,7 +7529,6 @@ subtil	subtilt
 subversiv	subversivt
 sudansk	sudansk
 suffisant	suffisant
-sugen	sugent
 suggestiv	suggestivt
 suicidal	suicidalt
 sukkerfri	sukkerfritt
@@ -7590,7 +7590,6 @@ svartsynt	svartsynt
 sveisen	sveisent
 sveitsisk	sveitsisk
 svensk	svensk
-svenskeid	svenskeid
 svett	svett
 svevende	svevende
 svibrent	svibrent
@@ -7615,6 +7614,7 @@ svoren	svorent
 svorsk	svorsk
 svullen	svullent
 svullet	svullet
+svullete	svullete
 svulstig	svulstig
 svunnen	svunnet
 svær	svært
@@ -7684,6 +7684,7 @@ såpeglatt	såpeglatt
 sårbar	sårbart
 sårbeint	sårbeint
 sårbent	sårbent
+sårfotet	sårfotet
 sårføtt	sårføtt
 særbo	særbo
 særbu	særbu
@@ -7698,7 +7699,6 @@ sødmefylt	sødmefylt
 søkkfull	søkkfullt
 søkklasta	søkklasta
 søkkrik	søkkrikt
-søkkvåt	søkkvått
 søkt	søkt
 sølet	sølet
 sølete	sølete
@@ -8006,6 +8006,7 @@ topp	topp
 topplaus	topplaust
 toppløs	toppløst
 topptung	topptungt
+topukla	topukla
 topuklet	topuklet
 tornefull	tornefullt
 tornet	tornet
@@ -8083,6 +8084,7 @@ treg	tregt
 trehendt	trehendt
 trehjuls	trehjuls
 trehjult	trehjult
+trehoda	trehoda
 trehodet	trehodet
 trehvit	trehvitt
 treig	treigt
@@ -8212,6 +8214,7 @@ tufsete	tufsete
 tuklet	tuklet
 tuklete	tuklete
 tuktig	tuktig
+tuktlaus	tuktlaust
 tuktløs	tuktløst
 tullerusk	tullerusk
 tullet	tullet
@@ -8330,7 +8333,6 @@ tåpen	tåpent
 tårekvalt	tårekvalt
 tåret	tåret
 tårete	tårete
-tårevåt	tårevått
 tårnhøg	tårnhøgt
 tårnhøy	tårnhøyt
 tårøyd	tårøyd
@@ -8403,7 +8405,6 @@ ubeherska	ubeherska
 ubehøvla	ubehøvla
 ubehøvlet	ubehøvlet
 ubekjent	ubekjent
-ubekrefta	ubekrefta
 ubekvem	ubekvemt
 ubekymra	ubekymra
 ubekymret	ubekymret
@@ -8502,7 +8503,6 @@ udelt	udelt
 udempa	udempa
 udempet	udempet
 udetonert	udetonert
-udrepelig	udrepelig
 udryg	udrygt
 udrøy	udrøyt
 udugelig	udugelig
@@ -8530,7 +8530,6 @@ uensarta	uensarta
 uensartet	uensartet
 uerfaren	uerfarent
 uerklært	uerklært
-uerotisk	uerotisk
 uestetisk	uestetisk
 uetablert	uetablert
 uetisk	uetisk
@@ -8593,6 +8592,7 @@ ufysen	ufysent
 ufødt	ufødt
 ufølbar	ufølbart
 ufølelig	ufølelig
+ufølgbar	ufølgbart
 ufølsom	ufølsomt
 ufør	uført
 uførlig	uførlig
@@ -8619,7 +8619,6 @@ ugripelig	ugripelig
 ugrisk	ugrisk
 ugrunna	ugrunna
 ugrunnet	ugrunnet
-ugudelig	ugudelig
 ugunstig	ugunstig
 ugyldig	ugyldig
 uhederlig	uhederlig
@@ -8644,6 +8643,7 @@ uhuga	uhuga
 uhumsk	uhumskt
 uhvass	uhvast
 uhyggelig	uhyggelig
+uhykla	uhykla
 uhyklet	uhyklet
 uhyre	uhyre
 uhyrlig	uhyrlig
@@ -8670,7 +8670,6 @@ ujevn	ujevnt
 ujorda	ujorda
 ujordet	ujordet
 ujordisk	ujordisk
-ukastrert	ukastrert
 ukegammal	ukegammalt
 ukegammel	ukegammelt
 ukelang	ukelangt
@@ -8696,10 +8695,6 @@ ukonsis	ukonsist
 ukorrekt	ukorrekt
 ukorrupt	ukorrupt
 ukoselig	ukoselig
-ukrainsk	ukrainsk
-ukrenka	ukrenka
-ukrenket	ukrenket
-ukrenkt	ukrenkt
 ukrigersk	ukrigersk
 ukring	ukringt
 ukritisk	ukritisk
@@ -9027,7 +9022,6 @@ uskrevet	uskrevet
 uskrømta	uskrømta
 uskrømtet	uskrømtet
 uskyldig	uskyldig
-uslaktet	uslaktet
 uslepen	uslepent
 uslepet	uslepet
 uslipt	uslipt
@@ -9107,6 +9101,7 @@ usårlig	usårlig
 usæl	usælt
 usøkt	usøkt
 usømmelig	usømmelig
+usøta	usøta
 usøtet	usøtet
 utabords	utabords
 utabygds	utabygds
@@ -9173,6 +9168,7 @@ utenriksk	utenriksk
 uterlig	uterlig
 utett	utett
 utfattig	utfattig
+utflagga	utflagga
 utflagget	utflagget
 utflippa	utflippa
 utflippet	utflippet
@@ -9283,6 +9279,7 @@ utrøtt	utrøtt
 utsatt	utsatt
 utseende	utseende
 utsegla	utsegla
+utseglet	utseglet
 utseilt	utseilt
 utsendt	utsendt
 utsjalta	utsjalta
@@ -9301,8 +9298,10 @@ utskylt	utskylt
 utskåren	utskåret
 utskåret	utskåret
 utslitt	utslitt
+utslokka	utslokka
 utslokket	utslokket
 utslokt	utslokt
+utslukka	utslukka
 utslukket	utslukket
 utslukt	utslukt
 utsluppen	utsluppet
@@ -9356,7 +9355,6 @@ uttørka	uttørka
 uttørket	uttørket
 uttørra	uttørra
 uttørret	uttørret
-utuktig	utuktig
 utvalgt	utvalgt
 utvanna	utvanna
 utvannet	utvannet
@@ -9398,6 +9396,7 @@ uutfylt	uutfylt
 uutførlig	uutførlig
 uutført	uutført
 uutgitt	uutgitt
+uutgrunna	uutgrunna
 uuthvilt	uuthvilt
 uutjamna	uutjamna
 uutjevnet	uutjevnet
@@ -9525,6 +9524,8 @@ vantru	vantru
 vanuatisk	vanuatisk
 vanvis	vanvist
 vanvittig	vanvittig
+vanvørden	vanvørdent
+vanvøren	vanvørent
 varaktig	varaktig
 variabel	variabelt
 varig	varig
@@ -9689,6 +9690,7 @@ verdiløs	verdiløst
 verdlaus	verdlaust
 verdslig	verdslig
 verdt	verdt
+vergefør	vergeført
 vergelaus	vergelaust
 vergeløs	vergeløst
 veritabel	veritabelt
@@ -9752,7 +9754,6 @@ vindfelt	vindfelt
 vindfull	vindfullt
 vindhard	vindhardt
 vindrett	vindrett
-vindskeiv	vindskeivt
 vindskjev	vindskjevt
 vindtett	vindtett
 vindtørr	vindtørt
@@ -9840,9 +9841,6 @@ vårslapp	vårslapt
 våryr	våryrt
 våset	våset
 våsete	våsete
-våtlendt	våtlendt
-våtsom	våtsomt
-våtøyd	våtøyd
 værbarka	værbarka
 værbarket	værbarket
 værbitt	værbitt
@@ -9931,6 +9929,7 @@ zygotisk	zygotisk
 åslendt	åslendt
 åttedels	åttedels
 åttekanta	åttekanta
+åttesida	åttesida
 åttesidet	åttesidet
 åtteårig	åtteårig
 åtteårs	åtteårs
@@ -9974,6 +9973,7 @@ zygotisk	zygotisk
 ønologisk	ønologisk
 ønskelig	ønskelig
 øreformet	øreformet
+ørelaus	ørelaust
 øreløs	øreløst
 øren	ørent
 ørkesløs	ørkesløst

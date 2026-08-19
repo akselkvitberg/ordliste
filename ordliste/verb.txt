@@ -112,6 +112,7 @@ auker
 auler
 aurer
 auser
+avalerer
 avanserer
 avbetaler
 avbilder
@@ -141,6 +142,7 @@ avgår
 avhender
 avhenger
 avhenter
+avherder
 avhjelper
 avholder
 avhører
@@ -150,7 +152,6 @@ avklarer
 avkler
 avkoder
 avkorter
-avkrefter
 avkrever
 avlaster
 avleder
@@ -176,6 +177,7 @@ avpasser
 avregner
 avreiser
 avretter
+avrimer
 avrunder
 avruster
 avsanner
@@ -288,7 +290,6 @@ befordrer
 befrakter
 befrir
 befrukter
-beføler
 begir
 begjærer
 beglor
@@ -321,7 +322,6 @@ bekniper
 bekommer
 bekoster
 bekranser
-bekrefter
 bekroner
 bekvemmer
 bekymrer
@@ -559,6 +559,7 @@ bremmer
 bremser
 brenner
 brer
+breserer
 brester
 bretter
 brifer
@@ -584,7 +585,6 @@ brygger
 bryner
 bryr
 brysker
-bryster
 bryter
 bråker
 bråner
@@ -598,6 +598,7 @@ brøyter
 budsender
 buer
 bufrer
+bufører
 bugner
 buker
 bukker
@@ -672,10 +673,8 @@ dangler
 danker
 danner
 danser
-dansker
 darrer
 dasker
-dasser
 dater
 daterer
 dauer
@@ -740,7 +739,6 @@ domfeller
 dominerer
 doner
 donerer
-doper
 dorer
 dorger
 dormer
@@ -748,7 +746,6 @@ doserer
 dosserer
 dotter
 dovner
-draperer
 drar
 dras
 dratter
@@ -871,6 +868,7 @@ entrer
 erfarer
 ergrer
 erholder
+erigerer
 erindrer
 erkjenner
 erklærer
@@ -1004,7 +1002,6 @@ fistler
 fjaser
 fjelger
 fjerner
-fjerter
 fjesker
 fjetrer
 fjoller
@@ -1059,6 +1056,7 @@ flur
 flyger
 flykter
 flyr
+flysser
 flyter
 flytter
 flår
@@ -1086,7 +1084,6 @@ forandrer
 forankrer
 forarger
 forarmer
-forbanner
 forbarmer
 forbauser
 forbedrer
@@ -1153,7 +1150,6 @@ forgrener
 forgriper
 forgrover
 forgubbes
-forguder
 forgyller
 forgår
 forhaler
@@ -1680,6 +1676,7 @@ hangler
 hanker
 hanser
 hanskes
+hardkoker
 hardner
 harker
 harmer
@@ -1720,6 +1717,7 @@ heler
 helger
 heller
 helliger
+helseslår
 hemmer
 hender
 henfaller
@@ -1733,7 +1731,6 @@ henkaster
 henleder
 henlegger
 henregner
-henretter
 henriver
 henrykker
 hensetter
@@ -1807,6 +1804,7 @@ hovner
 hufser
 huger
 hugger
+hugsvaler
 huier
 huker
 hukrer
@@ -1845,6 +1843,7 @@ hyrer
 hysjer
 hysser
 hytter
+håndfarer
 håndgir
 håndhever
 håndlager
@@ -1927,6 +1926,7 @@ innhegner
 innhenter
 innhyller
 innhøster
+innjager
 innkaller
 innkaster
 innkjøper
@@ -2049,6 +2049,7 @@ kaker
 kakker
 kakler
 kakser
+kaldrøker
 kalfatrer
 kalker
 kalkerer
@@ -2065,6 +2066,7 @@ kappløper
 kapprir
 kappror
 kaprer
+kapseiser
 kapsler
 karder
 karer
@@ -2076,7 +2078,6 @@ karver
 kaser
 kasserer
 kaster
-kastrerer
 katter
 kauer
 kauker
@@ -2089,6 +2090,7 @@ keiter
 kibber
 kiker
 kikker
+kikner
 kikrer
 kikser
 kildrer
@@ -2266,6 +2268,7 @@ knuser
 knusler
 knusper
 knuter
+knuvler
 knyr
 knyster
 knyter
@@ -2322,7 +2325,6 @@ kreler
 kremerer
 kremter
 krenger
-krenker
 kreperer
 krepper
 krepser
@@ -2367,7 +2369,6 @@ krøsser
 kubber
 kuber
 kuer
-kukelurer
 kuler
 kuller
 kulser
@@ -2405,7 +2406,6 @@ kveiker
 kveiler
 kvekker
 kvelder
-kveler
 kvelver
 kvepper
 kverker
@@ -2439,7 +2439,6 @@ kyter
 kåler
 kårer
 kåserer
-kåter
 køer
 køler
 køyer
@@ -2492,7 +2491,6 @@ lekker
 lekrer
 lekser
 lekter
-lemlester
 lemmer
 lemper
 lender
@@ -2590,7 +2588,6 @@ lyger
 lykkes
 lykter
 lyner
-lynsjer
 lyser
 lysker
 lysner
@@ -2625,6 +2622,7 @@ maier
 mailer
 maker
 makker
+maksler
 makter
 makulerer
 maler
@@ -2697,6 +2695,7 @@ minsker
 misakter
 misfarger
 mishager
+mishusker
 miskler
 miskunner
 misleder
@@ -2716,7 +2715,6 @@ mjauer
 mjuker
 mjukner
 mjølker
-mobber
 modererer
 modner
 modnes
@@ -2894,6 +2892,7 @@ ombringer
 ombygger
 ombærer
 omdanner
+omdeler
 omdikter
 omdøper
 omfatter
@@ -2923,7 +2922,6 @@ omsender
 omsetter
 omsjalter
 omskaper
-omskjærer
 omskoler
 omskriver
 omslutter
@@ -2938,7 +2936,6 @@ omvandler
 omvelter
 omvender
 omvikler
-onanerer
 onner
 opererer
 oppbygger
@@ -2966,7 +2963,6 @@ opphøyer
 oppildner
 oppirrer
 oppkaller
-oppkaster
 oppkjøper
 oppklarer
 opplader
@@ -3004,6 +3000,7 @@ opptegner
 opptenner
 opptjener
 opptrer
+oppusser
 oppvarmer
 oppvarter
 oppveier
@@ -3011,6 +3008,7 @@ oppvekker
 oppvigler
 oppviser
 oppøver
+opterer
 optimerer
 order
 ordinerer
@@ -3025,6 +3023,7 @@ oser
 oster
 otrer
 ottes
+outrerer
 overbyr
 overdrar
 overdøver
@@ -3419,6 +3418,7 @@ rullerer
 rumler
 runder
 rundjuler
+rundlurer
 runer
 runger
 rurer
@@ -3608,6 +3608,7 @@ skalter
 skambiter
 skamferer
 skammer
+skamrir
 skamroser
 skamslår
 skanderer
@@ -3624,7 +3625,6 @@ skavler
 skeier
 skeiner
 skeiser
-skeiver
 skifter
 skikker
 skildrer
@@ -3719,6 +3719,7 @@ skråler
 skråner
 skrår
 skrøner
+skrør
 skubber
 skuer
 skuffer
@@ -3761,7 +3762,6 @@ skålder
 skåler
 skåner
 skårer
-skåter
 skøyer
 skøyter
 slabber
@@ -3772,7 +3772,6 @@ slager
 slagger
 slakker
 slakner
-slakter
 slammer
 slamper
 slamrer
@@ -4100,6 +4099,7 @@ storkoser
 storler
 stormer
 stormgjør
+stortrivs
 stotrer
 straffer
 strammer
@@ -4125,7 +4125,6 @@ strikker
 striler
 strimler
 striper
-stripper
 strir
 stritter
 stropper
@@ -4161,7 +4160,6 @@ står
 støer
 støkker
 støler
-stønner
 støper
 støpsler
 stør
@@ -4246,6 +4244,7 @@ sviver
 svolker
 svovler
 svulmer
+svulner
 svupper
 svæver
 svømmer
@@ -4983,6 +4982,7 @@ zoomer
 ødsler
 øker
 økser
+øksler
 økter
 øller
 ømmer
